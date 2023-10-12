@@ -1,0 +1,122 @@
+<?php
+require_once(__dir__ . './Controller.php');
+require_once('./model/CMSModel.php');
+require_once('./controller/UploadFile.php');
+class CMSController extends Controller
+{
+
+    public $active = 'CMS'; //for highlighting the active link...
+    private $Model;
+
+    /**
+     * @param null|void
+     * @return null|void
+     * @desc Checks if the user session is set and creates a new instance of the DashboardModel...
+     **/
+    public function __construct()
+    {
+        $this->Model = new CMSModel();
+    }
+
+
+    // index page courses
+    public function getCourses()
+    {
+        return $this->Model->indexCourses();
+    }
+
+    // Slider index page
+    public function getSlider()
+    {
+        return $this->Model->indexSlider();
+    }
+
+    // Content index page
+    public function getContent()
+    {
+        return $this->Model->indexContent();
+    }
+
+    // Settings
+    public function getSetting()
+    {
+        return $this->Model->settings();
+    }
+
+    // Success History
+
+    public function getSuccess()
+    {
+        return $this->Model->indexSuccess();
+    }
+
+
+    // payment Banking
+    public function getPayment()
+    {
+        return $this->Model->indexPayment();
+    }
+
+    // CourseSelect in index page
+    public function getCourseSelect()
+    {
+        return $this->Model->indexCourseSelect();
+    }
+
+
+    //    Success Student in index page
+    public function getSuccessStudent()
+    {
+        return $this->Model->indexSuccessStudent();
+    }
+
+    //    graphicsCourse in graphicsMultimedia page
+    public function getgraphicsCourse()
+    {
+        return $this->Model->indexgraphicsCourse();
+    }
+
+    //    webSoftwareCourse in webSoftware page
+    public function getwebSoftware()
+    {
+        return $this->Model->indexwebSoftware();
+    }
+
+    //    digitalmarketingCourse in digitalmarketing page
+    public function getdigitalMarketing()
+    {
+        return $this->Model->indexdigitalMarketing();
+    }
+
+    //    basicTradeCourse in basicTrade page
+    public function getbasicTrade()
+    {
+        return $this->Model->indexbasicTrade();
+    }
+
+    //gallary in photoGallary page
+    public function getgallary()
+    {
+        return $this->Model->indexgallary();
+    }
+
+
+    // CreateMassege contact page
+    public function CreateMassege($data)
+    {
+       
+
+        $Payload = array(
+            'name' => $data['name'],
+            'mobile' => $data['mobile'],
+            'email' => $data['email'],
+            'subject' => $data['subject'],
+            'message' => $data['message'],
+            'status' => 1,
+        );
+        $data = $this->Model->CreateMassege($Payload);
+        echo $data;
+    }
+
+
+}
