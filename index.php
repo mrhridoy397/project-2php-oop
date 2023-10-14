@@ -37,7 +37,7 @@ require_once('./partials/header.php')
                     <p><?php echo  $value['Description']; ?></p>
                     <div class="btn-part">
                         <a href=""><?php echo  $value['btnOne']; ?></a>
-                        <a href=""><?php echo  $value['btnTwo']; ?></a>
+                        <a href="course.php"><?php echo  $value['btnTwo']; ?></a>
                     </div>
                     <div class="certified-part">
                         <div class="col icon-col"><img src="<?php echo  $value['image']; ?>" alt=""></div>

@@ -199,4 +199,13 @@ class CMSController extends Controller
 
 
 
+
+       // Course page courses
+    public function Course()
+    {
+        return $this->Model->CoursesAll();
+    }
+
+
+
 }

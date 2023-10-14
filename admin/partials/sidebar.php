@@ -232,6 +232,17 @@
          </div>
      </li>
 
+          <!-- Divider -->
+          <hr class="sidebar-divider d-none d-md-block">
+     <!-- Sidebar Toggler (Sidebar) -->
+     <li class="nav-item">
+         <a class="nav-link collapsed" href="onlineAdIndex.php">
+             <i class="fas fa-university fa-sm text-white-50"></i>
+             <!-- <i class="fas fa-university"></i> -->
+             <span>Online Admission</span>
+         </a>
+         </li>
+
 
        <!-- Divider -->
        <hr class="sidebar-divider d-none d-md-block">

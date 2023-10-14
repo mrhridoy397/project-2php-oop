@@ -400,7 +400,24 @@ class CMSModel extends Db
             return $course;
         }
     }
- 
+
+
+     // Course page courses
+     public function CoursesAll()
+     {
+        $this->query("SELECT * FROM `courses` where `isFeatured` = 1 AND `status` = 1");
+        $this->execute();
+
+        $courses = $this->fetchAll();
+        if (!empty($courses)) {
+            $Response = array(
+                $courses
+            );
+            return $Response;
+        }
+        return array();
+     }
+
 
     
 }
