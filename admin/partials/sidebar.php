@@ -93,6 +93,21 @@
              </div>
          </div>
      </li>
+       <!-- Divider -->
+       <hr class="sidebar-divider my-0">
+     <!-- Nav Item - Pages Collapse Menu -->
+     <li class="nav-item">
+         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#student" aria-expanded="true" aria-controls="collapsePages">
+             <i class="fas fa-book-reader fa-sm text-white-50"></i>
+             <span>Student</span>
+         </a>
+         <div id="student" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+             <div class="bg-white py-2 collapse-inner rounded">
+                 <a class="collapse-item" href="StudentIndex.php">All Student</a>
+                 <a class="collapse-item" href="StudentCreate.php">Create Student</a>
+             </div>
+         </div>
+     </li>
 
      <!-- Divider -->
      <hr class="sidebar-divider my-0">
@@ -100,7 +115,7 @@
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapsePages">
              <i class="fas fa-money-bill text-white-50"></i>
-             <span>Payments</span>
+             <span>OnlinPayments</span>
          </a>
          <div id="payment" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
