@@ -37,7 +37,7 @@ require_once('./partials/header.php')
                 
         ?>
             <div class="course-col">
-                <a href="office_application">
+                <a href="OnlinAdmission.php?id=<?php echo $value['id']; ?>">
                     <div class="course-image">
                         <img src="<?php echo  $value['image']; ?>" alt="">
                     </div>

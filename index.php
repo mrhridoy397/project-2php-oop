@@ -11,7 +11,6 @@ $success = $courses->getSuccess();
 $payment = $courses->getPayment();
 $CourseSelect = $courses->getCourseSelect();
 $SuccessStudent = $courses->getSuccessStudent();
-
 // var_dump($settings);
 
 ?>
@@ -132,7 +131,7 @@ require_once('./partials/header.php')
                 
                 ?>
                 <div class="course-col">
-                    <a href="" >
+                    <a href="OnlinAdmission.php?id=<?php echo $data['id']; ?>">
                         <div class="course-image">
                             <img src="<?php echo $data['image']; ?>" alt="">
                         </div>

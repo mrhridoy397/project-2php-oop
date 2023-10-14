@@ -40,7 +40,7 @@ require_once('./partials/header.php')
                     
             ?>
             <div class="course-col">
-                <a href="full_stack_developer">
+                <a href="OnlinAdmission.php?id=<?php echo $value['id']; ?>">
                     <div class="course-image">
                         <img src="<?php echo  $value['image']; ?>" alt="">
                     </div>

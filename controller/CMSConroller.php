@@ -118,5 +118,85 @@ class CMSController extends Controller
         echo $data;
     }
 
+      // createAdmission Admission Page
+      public function createAdmission($data)
+      {
+  
+          $Payload = array(
+              'courseId' => $data['courseId'],
+              'sname' => $data['sname'],
+              'phone' => $data['phone'],
+              'email' => $data['email'],
+              'type' => $data['type'],
+              'status' => 1,
+          );
+          $data = $this->Model->CreateAdmission($Payload);
+  
+          echo $data;
+      }
+
+
+     //  AllCourse index Page 
+     public function AllCourses()
+     {
+         return $this->Model->AllCourse();
+     }
+
+      // selectCourse onlinadmission Page
+    public function selectCourses($id)
+    {
+        return $this->Model->selectCourse($id);
+    }
+
+      //  AllCourse basicTrade Page 
+      public function AllCoursesbasictrade()
+      {
+          return $this->Model->basictradeAllCourse();
+      }
+ 
+       // selectCourse basicTrade Page
+     public function selectCoursesbasictrade($id)
+     {
+         return $this->Model->basictradeselectCourse($id);
+     }
+
+      //  AllCourse digitalmarketing Page 
+      public function AllCoursesdigitalmarketing()
+      {
+          return $this->Model->digitalmarketingAllCourse();
+      }
+ 
+       // selectCourse digitalmarketing Page
+     public function selectCoursesdigitalmarketing($id)
+     {
+         return $this->Model->digitalmarketingselectCourse($id);
+     }
+
+       //  AllCourse graphicscourse Page 
+       public function AllCoursesgraphicscourse()
+       {
+           return $this->Model->graphicscourseAllCourse();
+       }
+  
+        // selectCourse graphicscourse Page
+      public function selectCoursesgraphicscourse($id)
+      {
+          return $this->Model->graphicscourseselectCourse($id);
+      }
+
+
+       //  AllCourse websoftware Page 
+       public function AllCourseswebsoftware()
+       {
+           return $this->Model->websoftwareAllCourse();
+       }
+  
+        // selectCourse websoftware Page
+      public function selectCourseswebsoftware($id)
+      {
+          return $this->Model->websoftwareselectCourse($id);
+      }
+
+
 
 }

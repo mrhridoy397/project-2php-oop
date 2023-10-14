@@ -238,5 +238,169 @@ class CMSModel extends Db
         }
     }
 
+    // CreateAdmission admission Page
+    public function CreateAdmission(array $data)
+    {
+
+
+        $this->query("INSERT INTO `online_admission`( `courseId`, `sname`, `phone`, `email`, `type`, `status`) VALUES (?,?,?,?,?,?)");
+        $this->bind(1, $data['courseId']);
+        $this->bind(2, $data['sname']);
+        $this->bind(3, $data['phone']);
+        $this->bind(4, $data['email']);
+        $this->bind(5, $data['type']);
+        $this->bind(6, $data['status']);
+
+        if ($this->execute()) {
+            $data = [
+                "statusCode" => 200,
+                "Msg" => "Admission Successfully"
+            ];
+            return json_encode($data);
+        }
+        else{
+            $data = [
+                "statusCode" => 402,
+                "Msg" => "internal server error"
+            ];
+            return json_encode($data);
+        }
+    }
+
+
+
+     //  AllCourse index Page 
+     public function AllCourse()
+     {
+         $this->query("SELECT * FROM `courses` WHERE `status` = 1");
+         // $this->bind('id', $id);
+         $this->execute();
+ 
+         $course = $this->fetchAll();
+         if (!empty($course)) {
+             return $course;
+         }
+     }
+
+       // selectCourse OnlinAdmission Page
+    public function selectCourse($id)
+    {
+        $this->query("SELECT * FROM `courses` WHERE `id` = :id");
+        $this->bind('id', $id);
+        $this->execute();
+
+        $course = $this->fetchAll();
+        if (!empty($course)) {
+            return $course;
+        }
+    }
+
+     //  AllCourse basicTrade Page 
+     public function basicTradeAllCourse()
+     {
+         $this->query("SELECT * FROM `basictrade` WHERE `status` = 1");
+         // $this->bind('id', $id);
+         $this->execute();
+ 
+         $course = $this->fetchAll();
+         if (!empty($course)) {
+             return $course;
+         }
+     }
+
+       // selectCourse basicTrade Page
+    public function basicTradeselectCourse($id)
+    {
+        $this->query("SELECT * FROM `basictrade` WHERE `id` = :id");
+        $this->bind('id', $id);
+        $this->execute();
+
+        $course = $this->fetchAll();
+        if (!empty($course)) {
+            return $course;
+        }
+    }
+
+    //  AllCourse basicTrade Page 
+    public function digitalmarketingAllCourse()
+    {
+        $this->query("SELECT * FROM `digitalmarketing` WHERE `status` = 1");
+        // $this->bind('id', $id);
+        $this->execute();
+
+        $course = $this->fetchAll();
+        if (!empty($course)) {
+            return $course;
+        }
+    }
+
+      // selectCourse basicTrade Page
+   public function digitalmarketingselectCourse($id)
+   {
+       $this->query("SELECT * FROM `digitalmarketing` WHERE `id` = :id");
+       $this->bind('id', $id);
+       $this->execute();
+
+       $course = $this->fetchAll();
+       if (!empty($course)) {
+           return $course;
+       }
+   }
+
+
+     //  AllCourse graphicscourse Page 
+     public function graphicscourseAllCourse()
+     {
+         $this->query("SELECT * FROM `graphicscourse` WHERE `status` = 1");
+         // $this->bind('id', $id);
+         $this->execute();
+ 
+         $course = $this->fetchAll();
+         if (!empty($course)) {
+             return $course;
+         }
+     }
+ 
+       // selectCourse graphicscourse Page
+    public function graphicscourseselectCourse($id)
+    {
+        $this->query("SELECT * FROM `graphicscourse` WHERE `id` = :id");
+        $this->bind('id', $id);
+        $this->execute();
+ 
+        $course = $this->fetchAll();
+        if (!empty($course)) {
+            return $course;
+        }
+    }
+
+
+     //  AllCourse websoftware Page 
+     public function websoftwareAllCourse()
+     {
+         $this->query("SELECT * FROM `websoftware` WHERE `status` = 1");
+         // $this->bind('id', $id);
+         $this->execute();
+ 
+         $course = $this->fetchAll();
+         if (!empty($course)) {
+             return $course;
+         }
+     }
+ 
+       // selectCourse websoftware Page
+    public function websoftwareselectCourse($id)
+    {
+        $this->query("SELECT * FROM `websoftware` WHERE `id` = :id");
+        $this->bind('id', $id);
+        $this->execute();
+ 
+        $course = $this->fetchAll();
+        if (!empty($course)) {
+            return $course;
+        }
+    }
+ 
+
     
 }
