@@ -8,6 +8,7 @@ $CourseSelect = $courses->getCourseSelect();
 $SuccessStudent = $courses->getSuccessStudent();
 $ImagFree = $courses->freelanchingImage();
 $ContentFree = $courses->freelancingcontent();
+$ImageMarketPlace = $courses->indexmarketPlaceImage();
 ?>
 
 
@@ -34,20 +35,16 @@ require_once('./partials/header.php')
             </div>
             <div class="col">
                 <?php }}?>
+               
                 <div class="market-logo-row">
-                    <div class="logo-col"><img src="assets/img/marketplace1.png" alt=""></div>
-                    <div class="logo-col"><img src="assets/img/marketplace2.png" alt=""></div>
-                    <div class="logo-col"><img src="assets/img/marketplace3.png" alt=""></div>
-                    <div class="logo-col"><img src="assets/img/marketplace4.png" alt=""></div>
-                    <div class="logo-col"><img src="assets/img/marketplace5.png" alt=""></div>
-                    <div class="logo-col"><img src="assets/img/marketplace6.png" alt=""></div>
-                    <div class="logo-col"><img src="assets/img/marketplace7.png" alt=""></div>
-                    <div class="logo-col"><img src="assets/img/marketplace8.png" alt=""></div>
-                    <div class="logo-col"><img src="assets/img/marketplace9.png" alt=""></div>
-                    <div class="logo-col"><img src="assets/img/marketplace10.png" alt=""></div>
-                    <div class="logo-col"><img src="assets/img/marketplace11.png" alt=""></div>
-                    <div class="logo-col"><img src="assets/img/marketplace12.png" alt=""></div>
+                <?php 
+                    foreach ($ImageMarketPlace[0] as  $value) {
+                           
+                ?>
+                    <div class="logo-col"><img src="<?php echo $value['image']; ?>" alt=""></div>
+                    <?php }?>
                 </div>
+                
             </div>
         </div>
     </div>

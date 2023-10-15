@@ -380,4 +380,20 @@ class CMSModel extends Db
          }
          return array();
      }
+
+      //    marketPlaceImage in Freelanching page
+      public function marketPlaceImage()
+      {
+          $this->query("SELECT * FROM `marketplaceimage` where `status` = 1");
+          $this->execute();
+  
+          $about = $this->fetchAll();
+          if (!empty($about)) {
+              $Response = array(
+                  $about
+              );
+              return $Response;
+          }
+          return array();
+      }
 }

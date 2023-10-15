@@ -19,6 +19,7 @@ require_once('./partials/header.php')
 <div class="container">
     <div class="about-section">
         <?php 
+        if (!empty($about)) {
             foreach ($about[0] as  $value) {
                 
         ?>
@@ -30,7 +31,7 @@ require_once('./partials/header.php')
                 <p><?php echo $value['Description']; ?></p>
             </div>
         </div>
-        <?php }?>
+        <?php }}?>
     </div>
 
     <!-- counter section start -->

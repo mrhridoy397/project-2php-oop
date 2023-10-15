@@ -174,5 +174,11 @@ class CMSController extends Controller
             return $this->Model->indexAbout();
         }
 
+        // marketPlaceImage in Freelanching page
+        public function indexmarketPlaceImage()
+        {
+            return $this->Model->marketPlaceImage();
+        }
+
 
 }
