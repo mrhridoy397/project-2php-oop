@@ -1,12 +1,11 @@
-
-<?php require_once('./controller/SliderController.php'); ?>
+<?php require_once('./controller/freelancingImageController.php'); ?>
 <?php
-$slider = new SliderController();
+$freelancingimage = new FreelanchingController();
 $Response = [];
-$active = $slider->active;
-$data = $slider->Slideredit($_REQUEST['id']);
-if (isset($_REQUEST['submit']) && count($_REQUEST) > 1) $Response = $slider->SliderUpdate($_REQUEST, $_FILES);
-
+$active = $freelancingimage->active;
+$data = $freelancingimage->freelancingimageedit($_REQUEST['id']);
+if (isset($_REQUEST['submit']) && count($_REQUEST) > 1) $Response = $freelancingimage->freelancingimageUpdate($_REQUEST, $_FILES);
+// var_dump($data);
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +47,7 @@ if (isset($_REQUEST['submit']) && count($_REQUEST) > 1) $Response = $slider->Sli
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Edit <?php echo $active; ?></h1>
-                        <a href="SliderIndex.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-users-cog fa-sm text-white-50"></i> All <?php echo $active; ?></a>
+                        <a href="FreelanchingImageIndex.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-users-cog fa-sm text-white-50"></i> All <?php echo $active; ?></a>
                     </div>
                     <?php if (isset($Response['status']) && !$Response['status']) : ?>
                         <br>
@@ -68,41 +67,9 @@ if (isset($_REQUEST['submit']) && count($_REQUEST) > 1) $Response = $slider->Sli
                                 <div class="card-body">
                                     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form-signin" enctype="multipart/form-data">
                                         <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-4">
-                                            <div class="form-group">
-                                                <label for="title" >Slider Title </label>
-                                                <input type="text" id="title" class="form-control form-control-user" placeholder="Enter Title " name="title" required autofocus value="<?php if (isset($_POST['title'])){ echo $_POST['title'];} else { echo $data['title'];} ?>">
-                                                <?php if (isset($Response['title']) && !empty($Response['title'])) : ?>
-                                                    <small class="text-danger"><?php echo $Response['title']; ?></small>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-4">
-                                            <div class="form-group">
-                                                <label for="Shortdescription" >Short Description</label>
-                                                <input type="text" id="Shortdescription" class="form-control form-control-user" placeholder=" Enter shortDescription " name="Shortdescription" required autofocus value="<?php if (isset($_POST['Shortdescription'])){ echo $_POST['Shortdescription'];} else { echo $data['Shortdescription'];} ?>">
-                                                <?php if (isset($Response['Shortdescription']) && !empty($Response['Shortdescription'])) : ?>
-                                                    <small class="text-danger"><?php echo $Response['Shortdescription']; ?></small>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-4">
-                                            <div class="form-group">
-                                                <label for="Description" >Description</label>
-                                                <textarea name="Description" id="Description" cols="30" rows="10" class="form-control" placeholder="Event Details"><?php if (isset($_POST['Description'])){ echo $_POST['Description'];} else { echo $data['Description'];} ?></textarea>
-                                                <?php if (isset($Response['Description']) && !empty($Response['Description'])) : ?>
-                                                    <small class="text-danger"><?php echo $Response['Description']; ?></small>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-4">
-                                            <div class="form-group">
-                                                <label for="logoTitle" >Logo Text</label>
-                                                <textarea name="logoTitle" id="logoTitle" cols="30" rows="10" class="form-control" placeholder="Logo Title"><?php if (isset($_POST['logoTitle'])){ echo $_POST['logoTitle'];} else { echo $data['logoTitle'];} ?></textarea>
-                                                <?php if (isset($Response['logoTitle']) && !empty($Response['logoTitle'])) : ?>
-                                                    <small class="text-danger"><?php echo $Response['logoTitle']; ?></small>
-                                                <?php endif; ?>
-                                            </div>
+                                        <div class="form-group">
+                                        <label for="ShortTitle">Short Title<sup class="text-danger">*</sup></label>
+                                            <input  type="text" name="ShortTitle" id="ShortTitle" class="form-control" placeholder="Short Title" value="<?php if(isset($_REQUEST['ShortTitle']))  { echo $__REQUEST['ShortTitle'];} else{echo $data['ShortTitle'];}?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="status">Is Active</label>
@@ -126,21 +93,17 @@ if (isset($_REQUEST['submit']) && count($_REQUEST) > 1) $Response = $slider->Sli
                                         </div>
                                         <div class="form-group text-center mt-5">
                                             <button class="btn btn-primary" type="submit" name="submit">Update</button>
-                                            <a href="./SliderIndex.php" class="btn btn-danger">Cancle</a>
+                                            <a href="FreelanchingImageIndex.php" class="btn btn-danger">Cancle</a>
                                         </div>
                                     </form>
                                 </div>
-                                
                             </div>
                         </div>
-                        
                     </div>
-                
                 
                 <!-- /.container-fluid -->
 
             </div>
-            
             <!-- End of Main Content -->
 
             <!-- Footer -->
@@ -182,13 +145,6 @@ if (isset($_REQUEST['submit']) && count($_REQUEST) > 1) $Response = $slider->Sli
     <?php
     include_once('./partials/script.php');
     ?>
-
-<script src="./assets/vendor/ckeditor_4.22.1_full/ckeditor/ckeditor.js"></script>
-    <script>  
-        CKEDITOR.replace( 'Description' );
-        CKEDITOR.replace( 'logoTitle' );
-     </script>
-
 </body>
 
 </html>

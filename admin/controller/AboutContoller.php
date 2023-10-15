@@ -1,11 +1,10 @@
 <?php
 require_once(__dir__ . '/controller.php');
-require_once('./model/SliderModel.php');
-require_once('./controller/newUploadsFile.php');
-class SliderController extends Controller
+require_once('./model/AboutModel.php');
+class AboutController extends Controller
 {
 
-    public $active = 'Slider'; //for highlighting the active link...
+    public $active = 'About'; //for highlighting the active link...
     private $Model;
 
     /**
@@ -16,7 +15,7 @@ class SliderController extends Controller
     public function __construct()
     {
         if (!isset($_SESSION['auth_status'])) header("Location: index.php");
-        $this->Model = new SliderModel();
+        $this->Model = new AboutModel();
     }
     
     /**
@@ -24,37 +23,26 @@ class SliderController extends Controller
      * @return array
      * @desc Returns an array of news by calling the  BatchModel fetchNews method...
      **/
-    public function getSlider(): array
+    public function getAbout(): array
     {
-        return $this->Model->indexSlider();
+        return $this->Model->indexAbout();
     }
     /**
      * @param array
      * @return array|boolean
      * @desc Creates, and returns a user by calling the create method on the BatchModel...\
      **/
-    public function createSlider($data, $file)
+    public function createAbout($data)
     {
-       if($file['image'] != ""){
-         $fileName = new uploads();
-        $fileName->startupload($file);
-        $fileName->uploadfile();
-        $image  =  $fileName->dbupload;
-       }
-       else{
-        $image = "";
-       }
-
+    
       
         $Payload = array(
             'title' => $data['title'],
-            'Shortdescription' => $data['Shortdescription'],
             'Description' => $data['Description'],
-            'logoTitle' => $data['logoTitle'],
             'status' => $data['status'],
-            'image' => $image,
+            
         );
-        $Response = $this->Model->SliderCreate($Payload);
+        $Response = $this->Model->AboutCreate($Payload);
 
         if (!$Response['status']) {
             $Response['status'] = 'Sorry, An unexpected error occurred and your request could not be completed.';
@@ -62,7 +50,7 @@ class SliderController extends Controller
         }
         else{
             $Response['status'] = 'Congress! you data added successfully';
-            header("location: ./SliderIndex.php");
+            header("location: AboutIndex.php");
             return $Response;
         }
     }
@@ -72,44 +60,22 @@ class SliderController extends Controller
      * @return array
      * @desc Returns an array of news by calling the  BatchModel fetchNews method...
      **/
-    public function Slideredit($id)
+    public function Aboutedit($id)
     {
-        return $this->Model->editSlider($id);
+        return $this->Model->editAbout($id);
     }
 
-    public function SliderUpdate(array $data, $file)
+    public function AboutUpdate(array $data)
     {
-        if($file['image']['name'] != "" && $file['image']['size'] >= 500000 ){
-            echo "<script>alert('Ops File size is too large');</script>";
-            header("Location:SliderEdit.php?id=".$data['id']);
-        }
-        else{
-
-        if ($file['image']['name'] == "") {
-            $image = $data['oldImage'];
-        } 
-        else {
-            if ($data['oldImage'] != "") {
-            unlink($_SERVER['DOCUMENT_ROOT'] . "/project-2/" . $data['oldImage']);
-            $fileName = new uploads();
-            $fileName->startupload($file);
-            $fileName->uploadfile();
-            $image  =  $fileName->dbupload;
-            }
-            
-        }
-
+      
        
         $Payload = array(
             'id' => $data['id'],
             'title' => $data['title'],
-            'Shortdescription' => $data['Shortdescription'],
             'Description' => $data['Description'],
-            'logoTitle' => $data['logoTitle'],
             'status' => $data['status'],
-            'image' => $image,
         );
-        $Response = $this->Model->UpdateSlider($Payload);
+        $Response = $this->Model->UpdateAbout($Payload);
 
         if (!$Response['status']) {
             $Response['status'] = 'Sorry, An unexpected error occurred and your request could not be completed.';
@@ -117,11 +83,11 @@ class SliderController extends Controller
         }
         else{
             $Response['status'] = 'Congress! you data Update successfully';
-            header("location: ./SliderIndex.php");
+            header("location: AboutIndex.php");
             return $Response;
         }
     }
-    }
+    
 
 
     /**
@@ -129,22 +95,17 @@ class SliderController extends Controller
      * @return array
      * @desc Returns an array of news by calling the  BatchModel fetchNews method...
      **/
-    public function SliderDelete($id)
+    public function AboutDelete($id)
     {
-        $image = $this->Model->deleteSliderImage($id);
-        if($image['image'] != false){
-            unlink($_SERVER['DOCUMENT_ROOT']."/project-2/".$image['image']);
-        }
-
-        $response = $this->Model->deleteSlider($id);
+        $response = $this->Model->deleteAbout($id);
         if(!$response){
             $Response['status'] = 'Sorry, An unexpected error occurred and your request could not be completed.';
-            header("location: ./SliderIndex.php");
+            header("location: AboutIndex.php");
             return $Response;
         }
         else{
             $Response['status'] = 'Congress! you data Update successfully';
-            header("location: ./SliderIndex.php");
+            header("location: AboutIndex.php");
             return $Response;
         }
     }

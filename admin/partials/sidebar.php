@@ -114,13 +114,28 @@
      <!-- Nav Item - Pages Collapse Menu -->
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapsePages">
-             <i class="fas fa-money-bill text-white-50"></i>
+         <i class="fas fa-money-check-alt"></i>
              <span>OnlinPayments</span>
          </a>
          <div id="payment" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
                  <a class="collapse-item" href="paymentIndex.php">All Payment</a>
-                 <a class="collapse-item" href="./paymentCreate.php">Create  Payment</a>
+             </div>
+         </div>
+     </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+     <!-- Nav Item - Pages Collapse Menu -->
+     <li class="nav-item">
+         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#fees" aria-expanded="true" aria-controls="collapsePages">
+             <i class="fas fa-money-bill text-white-50"></i>
+             <span>Make Payments</span>
+         </a>
+         <div id="fees" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+             <div class="bg-white py-2 collapse-inner rounded">
+                 <a class="collapse-item" href="FeesIndex.php">All Student</a>
+                 <a class="collapse-item" href="FeesLog.php">All Transaction</a>
              </div>
          </div>
      </li>
@@ -243,6 +258,39 @@
          <div id="Massage" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
                  <a class="collapse-item" href="contactMassageIndex.php">All Massage</a>
+             </div>
+         </div>
+     </li>
+
+       <!-- Divider -->
+       <hr class="sidebar-divider my-0">
+     <!-- Nav Item - Pages Collapse Menu -->
+     <li class="nav-item">
+         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#free" aria-expanded="true" aria-controls="collapsePages">
+         <i class="fas fa-vote-yea"></i>
+             <span>Freelanching Content</span>
+         </a>
+         <div id="free" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+             <div class="bg-white py-2 collapse-inner rounded">
+                 <a class="collapse-item" href="FreelanchingContentIndex.php">All Content</a>
+                 <a class="collapse-item" href="FreelanchingImageIndex.php">All Image</a>
+                 <a class="collapse-item" href="">All MarketPlaceImage</a>
+             </div>
+         </div>
+     </li>
+     
+         <!-- Divider -->
+         <hr class="sidebar-divider my-0">
+     <!-- Nav Item - Pages Collapse Menu -->
+     <li class="nav-item">
+         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#about" aria-expanded="true" aria-controls="collapsePages">
+         <i class="fas fa-address-card"></i>
+             <span>About Content</span>
+         </a>
+         <div id="about" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+             <div class="bg-white py-2 collapse-inner rounded">
+                 <a class="collapse-item" href="AboutIndex.php">All About</a>
+                 <a class="collapse-item" href="AboutCreate.php">Create About</a>
              </div>
          </div>
      </li>

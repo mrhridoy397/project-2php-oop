@@ -257,8 +257,7 @@ class CMSModel extends Db
                 "Msg" => "Admission Successfully"
             ];
             return json_encode($data);
-        }
-        else{
+        } else {
             $data = [
                 "statusCode" => 402,
                 "Msg" => "internal server error"
@@ -269,142 +268,56 @@ class CMSModel extends Db
 
 
 
-     //  AllCourse index Page 
-     public function AllCourse()
-     {
-         $this->query("SELECT * FROM `courses` WHERE `status` = 1");
-         // $this->bind('id', $id);
-         $this->execute();
- 
-         $course = $this->fetchAll();
-         if (!empty($course)) {
-             return $course;
-         }
-     }
+    //  AllCourse index Page 
+    public function AllCourse()
+    {
+        $this->query("SELECT * FROM `courses` WHERE `status` = 1");
+        $this->execute();
+        $course = $this->fetchAll();
+        if (!empty($course)) {
+            return $course;
+        }
+        $this->query("SELECT * FROM `websoftware` WHERE `status` = 1");
+        $this->execute();
+        $this->query("SELECT * FROM `basictrade` WHERE `status` = 1");
+        $this->execute();
+        $this->query("SELECT * FROM `digitalmarketing` WHERE `status` = 1");
+        $this->execute();
+        $this->query("SELECT * FROM `graphicscourse` WHERE `status` = 1");
+        $this->execute();
+    }
 
-       // selectCourse OnlinAdmission Page
+    // selectCourse OnlinAdmission Page
     public function selectCourse($id)
     {
         $this->query("SELECT * FROM `courses` WHERE `id` = :id");
         $this->bind('id', $id);
         $this->execute();
-
         $course = $this->fetchAll();
         if (!empty($course)) {
             return $course;
         }
-    }
-
-     //  AllCourse basicTrade Page 
-     public function basicTradeAllCourse()
-     {
-         $this->query("SELECT * FROM `basictrade` WHERE `status` = 1");
-         // $this->bind('id', $id);
-         $this->execute();
- 
-         $course = $this->fetchAll();
-         if (!empty($course)) {
-             return $course;
-         }
-     }
-
-       // selectCourse basicTrade Page
-    public function basicTradeselectCourse($id)
-    {
-        $this->query("SELECT * FROM `basictrade` WHERE `id` = :id");
-        $this->bind('id', $id);
-        $this->execute();
-
-        $course = $this->fetchAll();
-        if (!empty($course)) {
-            return $course;
-        }
-    }
-
-    //  AllCourse basicTrade Page 
-    public function digitalmarketingAllCourse()
-    {
-        $this->query("SELECT * FROM `digitalmarketing` WHERE `status` = 1");
-        // $this->bind('id', $id);
-        $this->execute();
-
-        $course = $this->fetchAll();
-        if (!empty($course)) {
-            return $course;
-        }
-    }
-
-      // selectCourse basicTrade Page
-   public function digitalmarketingselectCourse($id)
-   {
-       $this->query("SELECT * FROM `digitalmarketing` WHERE `id` = :id");
-       $this->bind('id', $id);
-       $this->execute();
-
-       $course = $this->fetchAll();
-       if (!empty($course)) {
-           return $course;
-       }
-   }
-
-
-     //  AllCourse graphicscourse Page 
-     public function graphicscourseAllCourse()
-     {
-         $this->query("SELECT * FROM `graphicscourse` WHERE `status` = 1");
-         // $this->bind('id', $id);
-         $this->execute();
- 
-         $course = $this->fetchAll();
-         if (!empty($course)) {
-             return $course;
-         }
-     }
- 
-       // selectCourse graphicscourse Page
-    public function graphicscourseselectCourse($id)
-    {
-        $this->query("SELECT * FROM `graphicscourse` WHERE `id` = :id");
-        $this->bind('id', $id);
-        $this->execute();
- 
-        $course = $this->fetchAll();
-        if (!empty($course)) {
-            return $course;
-        }
-    }
-
-
-     //  AllCourse websoftware Page 
-     public function websoftwareAllCourse()
-     {
-         $this->query("SELECT * FROM `websoftware` WHERE `status` = 1");
-         // $this->bind('id', $id);
-         $this->execute();
- 
-         $course = $this->fetchAll();
-         if (!empty($course)) {
-             return $course;
-         }
-     }
- 
-       // selectCourse websoftware Page
-    public function websoftwareselectCourse($id)
-    {
         $this->query("SELECT * FROM `websoftware` WHERE `id` = :id");
         $this->bind('id', $id);
         $this->execute();
- 
-        $course = $this->fetchAll();
-        if (!empty($course)) {
-            return $course;
-        }
+        $this->query("SELECT * FROM `basictrade` WHERE `id` = :id");
+        $this->bind('id', $id);
+        $this->execute();
+        $this->query("SELECT * FROM `digitalmarketing` WHERE `id` = :id");
+        $this->bind('id', $id);
+        $this->execute();
+        $this->query("SELECT * FROM `graphicscourse` WHERE `id` = :id");
+        $this->bind('id', $id);
+        $this->execute();
+       
     }
 
 
-     // Course page courses
-     public function CoursesAll()
-     {
+
+
+    // Course page courses
+    public function CoursesAll()
+    {
         $this->query("SELECT * FROM `courses` where `isFeatured` = 1 AND `status` = 1");
         $this->execute();
 
@@ -416,8 +329,55 @@ class CMSModel extends Db
             return $Response;
         }
         return array();
+    }
+
+
+    //    freelanchingImage in freelanching page
+    public function indexfreelanching()
+    {
+        $this->query("SELECT * FROM `freelancingimage` where `status` = 1");
+        $this->execute();
+
+        $freelanching = $this->fetchAll();
+        if (!empty($freelanching)) {
+            $Response = array(
+                $freelanching
+            );
+            return $Response;
+        }
+        return array();
+    }
+
+
+    //    freelanchingImage in freelanching page
+    public function indexfreelancingcontent()
+    {
+        $this->query("SELECT * FROM `freelancingcontent` where `status` = 1");
+        $this->execute();
+
+        $freelanching = $this->fetchAll();
+        if (!empty($freelanching)) {
+            $Response = array(
+                $freelanching
+            );
+            return $Response;
+        }
+        return array();
+    }
+
+     //    aboutContent in about page
+     public function indexAbout()
+     {
+         $this->query("SELECT * FROM `about` where `status` = 1");
+         $this->execute();
+ 
+         $about = $this->fetchAll();
+         if (!empty($about)) {
+             $Response = array(
+                 $about
+             );
+             return $Response;
+         }
+         return array();
      }
-
-
-    
 }

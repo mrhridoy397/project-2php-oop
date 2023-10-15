@@ -1,21 +1,21 @@
 <?php
 require_once(__dir__ . '/Db.php');
-class SliderModel extends Db
+class freelanchingImageModel extends Db
 {
        /**
      * @param string
      * @return array
      * @desc Returns a user record based on the method parameter....
      **/
-    public function indexSlider()
+    public function indexfreelanchingImage()
     {
-        $this->query("SELECT * FROM `slider`");
+        $this->query("SELECT * FROM `freelancingimage`");
         $this->execute();
 
-        $slider = $this->fetchAll();
-        if (!empty($slider)) {
+        $freelanchingImage = $this->fetchAll();
+        if (!empty($freelanchingImage)) {
             $Response = array(
-               $slider
+               $freelanchingImage
             );
             return $Response;
         }
@@ -23,21 +23,17 @@ class SliderModel extends Db
           
         );
     }
-
     /**
      * @param array
      * @return array
      * @desc Creates and returns a user record....
      **/
-    public function SliderCreate(array $data)
+    public function freelancingimageCreate(array $data)
     {
-        $this->query("INSERT INTO `slider`( `title`, `Shortdescription`, `Description`,`logoTitle`, `status`,`image`) VALUES (?,?,?,?,?,?,)");
-        $this->bind(1, $data['title']);
-        $this->bind(2, $data['Shortdescription']);
-        $this->bind(3, $data['Description']);
-        $this->bind(4, $data['logoTitle']);
-        $this->bind(5, $data['status']);
-        $this->bind(6, $data['image']);
+        $this->query("INSERT INTO `freelancingimage`( `ShortTitle`, `image`, `status`) VALUES (?,?,?)");
+        $this->bind(1, $data['ShortTitle']);
+        $this->bind(2, $data['image']);
+        $this->bind(3, $data['status']);
         
 
         if ($this->execute()) {
@@ -61,15 +57,15 @@ class SliderModel extends Db
      * @return array
      * @desc Returns a user record based on the method parameter....
      **/
-    public function editSlider($id)
+    public function editfreelancingimage($id)
     {
-        $this->query("SELECT * FROM `slider` WHERE`id` = :id");
+        $this->query("SELECT * FROM `freelancingimage` WHERE`id` = :id");
         $this->bind('id', $id);
         $this->execute();
 
-        $slider = $this->fetch();
-        if (!empty($slider)) {
-              return  $slider; 
+        $freelancingimage = $this->fetch();
+        if (!empty($freelancingimage)) {
+              return  $freelancingimage; 
         }
     }
 
@@ -79,16 +75,13 @@ class SliderModel extends Db
      * @return array
      * @desc Creates and returns a user record....
      **/
-    public function UpdateSlider(array $data): array
+    public function Updatefreelancingimage(array $data): array
     {
-        $this->query("UPDATE `slider` SET `title`=?,`Shortdescription`=?,`Description`=?,`logoTitle`=?,`status`=?,`image`=? WHERE `id` =?");
-        $this->bind(1, $data['title']);
-        $this->bind(2, $data['Shortdescription']);
-        $this->bind(3, $data['Description']);
-        $this->bind(4, $data['logoTitle']);
-        $this->bind(5, $data['status']);
-        $this->bind(6, $data['image']);
-        $this->bind(7, $data['id']);
+        $this->query("UPDATE `freelancingimage` SET `ShortTitle`=?,`image`=?,`status`=? WHERE  `id` =?");
+        $this->bind(1, $data['ShortTitle']);
+        $this->bind(2, $data['image']);
+        $this->bind(3, $data['status']);
+        $this->bind(4, $data['id']);
 
         if ($this->execute()) {
             $Response = array(
@@ -104,8 +97,8 @@ class SliderModel extends Db
     }
 
 
-    public function deleteSliderImage($id){
-        $this->query("SELECT `image`FROM `slider` WHERE `id` = :id");
+    public function deletefreelancingImage($id){
+        $this->query("SELECT `image`FROM `freelancingimage` WHERE `id` = :id");
         $this->bind('id', $id);
         $this->execute();
         $image = $this->fetch();
@@ -120,14 +113,14 @@ class SliderModel extends Db
      * @return array
      * @desc Returns a user record based on the method parameter....
      **/
-    public function deleteSlider($id): array
+    public function deletefreelancing($id): array
     {
-        $this->query("DELETE FROM `slider` WHERE `id` = :id");
+        $this->query("DELETE FROM `freelancingimage` WHERE `id` = :id");
         $this->bind('id', $id);
         if ($this->execute()) {
             $Response = array(
                 'status' => true,
-                'msg' =>'Slider Delete successfully'
+                'msg' =>'freelancingimage Delete successfully'
             );
             return $Response;
         } else {

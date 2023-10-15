@@ -51,7 +51,7 @@ class Student extends Controller
     public function create($data, $file)
     {
         if ($file['image'] != "") {
-            $fileName = new upload();
+            $fileName = new uploads();
             $fileName->startupload($file);
             $fileName->uploadfile();
             $image  =  $fileName->dbupload;
@@ -118,9 +118,9 @@ class Student extends Controller
             $image = $data['oldImage'];
         } else {
             if ($data['oldImage'] != "") {
-                unlink($_SERVER['DOCUMENT_ROOT'] . "/education/" . $data['oldImage']);
+                unlink($_SERVER['DOCUMENT_ROOT'] . "/project-2/" . $data['oldImage']);
             }
-            $fileName = new upload();
+            $fileName = new uploads();
             $fileName->startupload($file);
             $fileName->uploadfile();
             $image  =  $fileName->dbupload;
@@ -176,7 +176,7 @@ class Student extends Controller
     {
         $image = $this->Model->deleteImage($id);
         if ($image['image'] != false) {
-            unlink($_SERVER['DOCUMENT_ROOT'] . "/education/" . $image['image']);
+            unlink($_SERVER['DOCUMENT_ROOT'] . "/project-2/" . $image['image']);
         }
 
         $response = $this->Model->delete($id);

@@ -6,6 +6,8 @@ $settings = $courses->getSetting();
 $payment = $courses->getPayment();
 $CourseSelect = $courses->getCourseSelect();
 $SuccessStudent = $courses->getSuccessStudent();
+$ImagFree = $courses->freelanchingImage();
+$ContentFree = $courses->freelancingcontent();
 ?>
 
 
@@ -19,18 +21,19 @@ require_once('./partials/header.php')
     <div class="freelancing-section">
 
         <div class="freelance-row">
-
+        <?php 
+           if(!empty($ContentFree)){
+           foreach ($ContentFree[0] as  $value) {
+               
+           
+           ?>
             <div class="col">
-                <h2>ফ্রিল্যান্সিং</h2>
-                <p>বাংলাদেশে আইসিটি ডিভিশনের এক জরিপ থেকে দেখা গেছে, বাংলাদেশে প্রায় ৫ লাখেরও বেশি ফ্রিল্যান্সার বিভিন্ন সেক্টরে কাজ করছেন। স্বাধীনভাবে কাজ করে স্বাবলম্বী হতে ট্রেন্ডি পেশা হিসেবে সবাই ফ্রিল্যান্সিং-কে বেছে নিচ্ছে। এভাবেই বিশ্বজুড়ে প্রায় ১ বিলিয়নেরও বেশি মানুষ ফ্রিল্যান্সিং করছেন। বেশিরভাগ ফ্রিল্যান্সারের গড় মাসিক আয় প্রায় ৪০ হাজারেরও বেশি। ফ্রিল্যান্সিং-এ ক্যারিয়ার গড়তে চাচ্ছেন? ফ্রিল্যান্সার হিসেবে গড়ে তুলতে ফিউচার কম্পিউটার ট্রেনিং ইনস্টিটিউট ২০টিরও বেশি সেক্টরে মানুষকে দক্ষ করে তুলছে।</p>
-                <div class="video-part">
-                    <iframe src="" title="" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-                </div>
+                <h2><?php echo $value['title'] ?></h2>
+                <p><?php echo $value['Description'] ?></p>
 
             </div>
             <div class="col">
-                <h2>ফ্রিল্যান্সিং মার্কেপ্লেস</h2>
-                <p>ফ্রিল্যান্স কাজের জন্য রয়েছে বিভিন্ন মার্কেটপ্লেস। আন্তর্জাতিক এসব মার্কেটপ্লেসের প্রত্যেকটি ভিন্ন ভিন্ন নিয়ম মেনে চললেও কাজের সুবিধা রয়েছে সবখানেই।</p>
+                <?php }}?>
                 <div class="market-logo-row">
                     <div class="logo-col"><img src="assets/img/marketplace1.png" alt=""></div>
                     <div class="logo-col"><img src="assets/img/marketplace2.png" alt=""></div>
@@ -81,55 +84,20 @@ require_once('./partials/header.php')
             </div>
         </div>
         <div class="free-part-row">
+            <?php 
+             if(!empty($ImagFree)){
+                foreach ($ImagFree[0] as  $value) {
+                    
+            ?>
             <div class="col">
                 <a href="graphics_multimedia">
-                    <div class="course-icon"><img src="assets/img/freelancing-icon1.png" alt=""></div>
+                    <div class="course-icon"><img src="<?php echo $value['image']; ?>" alt=""></div>
                     <div class="free-cate-text">
-                        <h3>গৃহিণী</h3>
+                        <h3><?php echo $value['ShortTitle']; ?></h3>
                     </div>
                 </a>
             </div>
-            <div class="col">
-                <a href="">
-                    <div class="course-icon"><img src="assets/img/freelancing-icon2.png" alt=""></div>
-                    <div class="free-cate-text">
-                        <h3>চাকুরী প্রত্যাশী ও চাকুজীবি</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="">
-                    <div class="course-icon"><img src="assets/img/freelancing-icon3.png" alt=""></div>
-                    <div class="free-cate-text">
-                        <h3>ছাত্র-ছাত্রী</h3>
-                    </div>
-                </a>
-
-            </div>
-            <div class="col">
-                <a href="">
-                    <div class="course-icon"><img src="assets/img/freelancing-icon4.png" alt=""></div>
-                    <div class="free-cate-text">
-                        <h3>প্রবাসী </h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="">
-                    <div class="course-icon"><img src="assets/img/freelancing-icon5.png" alt=""></div>
-                    <div class="free-cate-text">
-                        <h3>উদ্যোক্তা </h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="">
-                    <div class="course-icon"><img src="assets/img/freelancing-icon6.png" alt=""></div>
-                    <div class="free-cate-text">
-                        <h3>ফ্রিল্যান্সিং এ আগ্রহী </h3>
-                    </div>
-                </a>
-            </div>
+            <?php }}?>
         </div>
     </div>
 

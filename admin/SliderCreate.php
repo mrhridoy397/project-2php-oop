@@ -93,31 +93,7 @@ if (isset($_REQUEST) && count($_REQUEST) > 0) $Response = $slider->createSlider(
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-4">
                                             <div class="form-group">
-                                                <label for="btnOne" >Button One text</label>
-                                                <input type="text" id="btnOne" class="form-control form-control-user" placeholder="Button One text" name="btnOne" required autofocus value="<?php if (isset($_POST['btnOne'])) echo $_POST['btnOne'] ?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-4">
-                                            <div class="form-group">
-                                                <label for="btnOneLink" >Button One URL</label>
-                                                <input type="text" id="btnOneLink" class="form-control form-control-user" placeholder="Button One URL" name="btnOneLink" autofocus value="<?php if (isset($_POST['btnOneLink'])) echo $_POST['btnOneLink'] ?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-4">
-                                            <div class="form-group">
-                                                <label for="btnTwo" >Button Two text</label>
-                                                <input type="text" id="btnTwo" class="form-control form-control-user" placeholder="Button Two text" name="btnTwo"  autofocus value="<?php if (isset($_POST['btnTwo'])) echo $_POST['btnTwo'] ?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-4">
-                                            <div class="form-group">
-                                                <label for="btnTwoLink" class="sr-only">Button Two URL</label>
-                                                <input type="text" id="btnTwoLink" class="form-control form-control-user" placeholder="Button Two URL" name="btnTwoLink"  autofocus value="<?php if (isset($_POST['btnTwoLink'])) echo $_POST['btnTwoLink'] ?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-4">
-                                            <div class="form-group">
-                                                <label for="logoTitle" >Logo Title</label>
+                                                <label for="logoTitle" >Logo Text</label>
                                                 <textarea name="logoTitle" id="logoTitle" cols="15" rows="5" class="form-control" placeholder="Logo Title"><?php if (isset($_POST['logoTitle'])) echo $_POST['logoTitle']; ?></textarea>
                                                 <?php if (isset($Response['logoTitle']) && !empty($Response['logoTitle'])) : ?>
                                                     <small class="text-danger"><?php echo $Response['logoTitle']; ?></small>
@@ -198,7 +174,9 @@ if (isset($_REQUEST) && count($_REQUEST) > 0) $Response = $slider->createSlider(
 <script src="./assets/vendor/ckeditor_4.22.1_full/ckeditor/ckeditor.js"></script>
     <script>  
         CKEDITOR.replace( 'Description' );
+        CKEDITOR.replace( 'logoTitle' );
      </script>
+     
 
 </body>
 

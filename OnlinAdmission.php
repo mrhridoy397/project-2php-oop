@@ -10,19 +10,6 @@ $SuccessStudent = $courses->getSuccessStudent();
 //  AllCourse index Page 
 $selectCourse = $courses->selectCourses($_REQUEST['id']);
 $allCourse = $courses->AllCourses();
-//  AllCourse basictrade Page 
-// $selectCourse = $courses->selectCoursesbasictrade($_REQUEST['id']);
-// $allCourse = $courses->AllCoursesbasictrade();
-//  AllCourse digitalmarketing Page 
-// $selectCourse = $courses->selectCoursesdigitalmarketing($_REQUEST['id']);
-// $allCourse = $courses->AllCoursesdigitalmarketing();
-//  AllCourse graphicscourse Page 
-// $selectCourse = $courses->selectCoursesgraphicscourse($_REQUEST['id']);
-// $allCourse = $courses->AllCoursesgraphicscourse();
-//  AllCourse websoftware Page 
-// $selectCourse = $courses->selectCourseswebsoftware($_REQUEST['id']);
-// $allCourse = $courses->AllCourseswebsoftware();
-// if (isset($_REQUEST) && count($_REQUEST) > 1) $Response = $courses->createAdmission($_REQUEST);
 
 
 ?>
