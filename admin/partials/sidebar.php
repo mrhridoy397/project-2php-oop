@@ -109,6 +109,22 @@
          </div>
      </li>
 
+       <!-- Divider -->
+       <hr class="sidebar-divider my-0">
+     <!-- Nav Item - Pages Collapse Menu -->
+     <li class="nav-item">
+         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#stuffmain" aria-expanded="true" aria-controls="collapsePages">
+             <i class="fas fa-book-reader fa-sm text-white-50"></i>
+             <span>Stuff</span>
+         </a>
+         <div id="stuffmain" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+             <div class="bg-white py-2 collapse-inner rounded">
+                 <a class="collapse-item" href="StuffIndex.php">All Stuff</a>
+                 <a class="collapse-item" href="StuffCreate.php">Create Stuff</a>
+             </div>
+         </div>
+     </li>
+
      <!-- Divider -->
      <hr class="sidebar-divider my-0">
      <!-- Nav Item - Pages Collapse Menu -->

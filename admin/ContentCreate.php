@@ -3,7 +3,7 @@
 $content = new ContentController();
 $Response = [];
 $active = $content->active;
-if (isset($_REQUEST) && count($_REQUEST) > 0) $Response = $content->createContent($_REQUEST, $_FILES);
+if (isset($_REQUEST) && count($_REQUEST) > 0) $Response = $content->createContent($_REQUEST);
 
 ?>
 
@@ -66,10 +66,6 @@ if (isset($_REQUEST) && count($_REQUEST) > 0) $Response = $content->createConten
                                 <div class="card-body">
                                     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form-signin" enctype="multipart/form-data">
                                         <div class="form-group">
-                                        <label for="title">Title<sup class="text-danger">*</sup></label>
-                                            <input  type="text" name="title" id="title" class="form-control" placeholder="Title" value="<?php if(isset($_REQUEST['title']))  { echo $__REQUEST['title'];}?>">
-                                        </div>
-                                        <div class="form-group">
                                         <label for="Shortdescription">Short Description<sup class="text-danger">*</sup></label>
                                             <input  type="text" name="Shortdescription" id="Shortdescription" class="form-control" placeholder="Short Description" value="<?php if(isset($_REQUEST['Shortdescription']))  { echo $__REQUEST['Shortdescription'];}?>">
                                         </div>
@@ -85,13 +81,9 @@ if (isset($_REQUEST) && count($_REQUEST) > 0) $Response = $content->createConten
                                                 <option value="0" <?php if (isset($_REQUEST['status']) && $_REQUEST['status'] == 0) { echo "selected";} ?>>Deactive</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                        <label for="image"> Featured Image</label>
-                                            <input  type="file" name="image" id="image" class="form-control" placeholder=" image" value="<?php if(isset($_FILES['image']))  { echo $_FILES['image'];}?>">
-                                        </div>
                                         <div class="form-group text-center mt-5">
                                             <button class="btn btn-primary" type="submit" name="submit">Save</button>
-                                            <a href="./ContentIndex.php" class="btn btn-danger">Cancle</a>
+                                            <a href="ContentIndex.php" class="btn btn-danger">Cancle</a>
                                         </div>
                                     </form>
                                 </div>

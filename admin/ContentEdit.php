@@ -4,7 +4,7 @@ $content = new ContentController();
 $Response = [];
 $active = $content->active;
 $data = $content->Contentedit($_REQUEST['id']);
-if (isset($_REQUEST['submit']) && count($_REQUEST) > 1) $Response = $content->ContentUpdate($_REQUEST, $_FILES);
+if (isset($_REQUEST['submit']) && count($_REQUEST) > 1) $Response = $content->ContentUpdate($_REQUEST);
 // var_dump($value);
 ?>
 
@@ -68,10 +68,6 @@ if (isset($_REQUEST['submit']) && count($_REQUEST) > 1) $Response = $content->Co
                                     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form-signin" enctype="multipart/form-data">
                                         <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
                                         <div class="form-group">
-                                        <label for="title">Title<sup class="text-danger">*</sup></label>
-                                            <input  type="text" name="title" id="title" class="form-control" placeholder="Title" value="<?php if(isset($_REQUEST['title']))  { echo $__REQUEST['title'];} else{echo $data['title'];}?>">
-                                        </div>
-                                        <div class="form-group">
                                         <label for="Shortdescription">Short Description<sup class="text-danger">*</sup></label>
                                             <input  type="text" name="Shortdescription" id="Shortdescription" class="form-control" placeholder="Short Description" value="<?php if(isset($_REQUEST['Shortdescription']))  { echo $__REQUEST['Shortdescription'];} else{echo $data['Shortdescription'];}?>">
                                         </div>
@@ -86,17 +82,6 @@ if (isset($_REQUEST['submit']) && count($_REQUEST) > 1) $Response = $content->Co
                                                 <option value="1" <?php if (isset($_REQUEST['status']) && $_REQUEST['status'] == 1) { echo "selected";} elseif($data['status'] == 1){echo "selected";} ?>>Active </option>
                                                 <option value="0" <?php if (isset($_REQUEST['status']) && $_REQUEST['status'] == 0) { echo "selected";} elseif($data['status'] == 0){echo "selected";} ?>>Deactive</option>
                                             </select>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <img src="../<?php echo $data['image'] ?>" class="img-fluid"></div>
-                                            </div>
-                                            <div class="col-8">
-                                        <div class="form-group">
-                                        <label for="image"> Featured Image</label>
-                                            <input  type="file" name="image" id="image" class="form-control" placeholder=" image">
-                                            <input type="hidden" value="<?php echo $data['image'] ?>" name="oldImage">
-                                        </div>
                                         </div>
                                         </div>
                                         <div class="form-group text-center mt-5">

@@ -140,6 +140,14 @@ if (isset($_REQUEST['submit']) && count($_REQUEST) > 0) $Response = $settings->U
                                                 <input type="text" id="<?php echo $data[19]['title']; ?>" class="form-control form-control-user" placeholder="<?php echo $data[19]['title']; ?>" name="<?php echo $data[19]['title']; ?>"  value="<?php echo $data[19]['description']; ?>">
                                             </div>
                                             <div class="form-group">
+                                                <label for="<?php echo $data[20]['title']; ?>" ><?php echo $data[20]['title']; ?></label>
+                                                <input type="text" id="<?php echo $data[20]['title']; ?>" class="form-control form-control-user" placeholder="<?php echo $data[20]['title']; ?>" name="<?php echo $data[20]['title']; ?>"  value="<?php echo $data[20]['description']; ?>">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="<?php echo $data[22]['title']; ?>" ><?php echo $data[22]['title']; ?></label>
+                                                <input type="text" id="<?php echo $data[22]['title']; ?>" class="form-control form-control-user" placeholder="<?php echo $data[22]['title']; ?>" name="<?php echo $data[22]['title']; ?>"  value="<?php echo $data[22]['description']; ?>">
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="" ><?php echo $data[1]['title']; ?></label>
                                                 <input type="hidden"  name="oldsideLogo"  value="<?php echo $data[1]['description']; ?>">
                                                 <input type="file" name="<?php echo $data[1]['title']; ?>" class="form-control">
@@ -150,6 +158,12 @@ if (isset($_REQUEST['submit']) && count($_REQUEST) > 0) $Response = $settings->U
                                                 <input type="hidden"  name="oldFaviconIcon"  value="<?php echo $data[18]['description']; ?>">
                                                 <input type="file" name="<?php echo $data[18]['title']; ?>" class="form-control">
                                                 <img src="../<?php echo $data[18]['description']; ?>" height="50" alt="Favicon Logo">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="" ><?php echo $data[21]['title']; ?></label>
+                                                <input type="hidden"  name="oldContentImage"  value="<?php echo $data[21]['description']; ?>">
+                                                <input type="file" name="<?php echo $data[21]['title']; ?>" class="form-control">
+                                                <img src="../<?php echo $data[21]['description']; ?>" height="50" alt="Content Image">
                                             </div>
                                         <div class="form-group text-center mt-5">
                                             <button class="btn btn-primary" type="submit" name="submit">Update</button>
@@ -206,7 +220,11 @@ if (isset($_REQUEST['submit']) && count($_REQUEST) > 0) $Response = $settings->U
     include_once('./partials/script.php');
     ?>
 
-
+<script src="./assets/vendor/ckeditor_4.22.1_full/ckeditor/ckeditor.js"></script>
+    <script>  
+        CKEDITOR.replace( 'coursesDescription' );
+        CKEDITOR.replace( 'address' );
+     </script>
 
 </body>
 

@@ -1,9 +1,10 @@
-<?php require_once('./controller/ContentController.php'); ?>
+<?php require_once('./controller/StuffController.php'); ?>
 <?php
-$content = new ContentController();
+$stuff = new Stuff();
 $Response = [];
-$active = $content->active;
-$Index = $content->getContent();
+$active = $stuff->active;
+$Index = $stuff->get();
+// if (isset($_REQUEST) && count($_REQUEST) > 0) $Response = $course->create($_REQUEST['id']);
 
 ?>
 <!DOCTYPE html>
@@ -44,8 +45,8 @@ $Index = $content->getContent();
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">All Content</h1>
-                        <a href="ContentCreate.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-users-cog fa-sm text-white-50"></i> Create Content</a>
+                        <h1 class="h3 mb-0 text-gray-800">All <?php echo ucfirst($active); ?></h1>
+                        <a href="StuffCreate.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-users fa-sm text-white-50"></i> Create <?php echo ucfirst($active); ?></a>
                     </div>
                     <?php if (isset($Response['status']) && !$Response['status']) : ?>
                         <br>
@@ -67,41 +68,68 @@ $Index = $content->getContent();
                                     <thead>
                                         <tr>
                                             <th>SL</th>
-                                            <th>Short Description</th>
-                                            <th>Description</th>
-                                            <th>Status</th>
+                                            <th>Image</th>
+                                            <th>Employee Name</th>
+                                            <th>designation</th>
+                                            <th>subject</th>
+                                            <th>phone number</th>
+                                            <th>Contact type</th>
+                                            <th>status</th>
                                             <th>Action</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody class="text-center">
                                         <?php
                                         $i = 1;
                                         if(!empty($Index)){
-                                        foreach ($Index['0'] as $data) {
+                                        foreach ($Index as $data) {
                                         ?>
                                             <tr>
                                                 <td><?php echo $i; ?></td>
-                                                <td><?php echo $data['Shortdescription']; ?></td>
-                                                <td><?php echo $data['description']; ?></td>
+                                                <td><img src="../<?php echo $data['image']; ?>" height="50"></img></td>
+                                                <td><?php echo $data['name']; ?></td>
+                                                <td><?php echo $data['desigmation']; ?></td>
+                                                <td><?php echo $data['subject']; ?></td>
+                                                <td><?php echo $data['phone']; ?></td>
+                                               
                                                 <td>
                                                     <?php
-                                                    if ($data['status'] == 0) {
-                                                        echo "Deactive";
-                                                    } else {
-                                                        echo "Active";
+                                                    if ($data['contactType'] == 1) {
+                                                        echo "Permanent";
                                                     }
-
+                                                    elseif ($data['contactType'] == 2) {
+                                                        echo "Intern";
+                                                    }
+                                                    elseif ($data['contactType'] == 3){
+                                                        echo "Contractual";
+                                                    }
+                                                    
+                                                    
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <a href="ContentEdit.php?id=<?php echo $data['id']; ?>" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
+                                                    <?php
+                                                     if ($data['status'] == 1) {
+                                                        echo "Active";
+                                                    }
+                                                    elseif ($data['status'] == 2) {
+                                                        echo "Postponded";
+                                                    }
+                                                    elseif ($data['status'] == 3){
+                                                        echo "Restricted";
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <a href="StuffEdit.php?id=<?php echo $data['id']; ?>" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
                                                     <button  class="btn btn-sm btn-danger delete" id="delete <?php echo $data['id']; ?>" value="<?php echo $data['id']; ?>"><i class="fas fa-trash-alt"></i></button>
                                                 </td>
                                             </tr>
                                         <?php
                                         $i++;
                                         }
-                                       }
+                                        }
                                         ?>
                                     </tbody>
                                 </table>
@@ -177,7 +205,7 @@ $Index = $content->getContent();
     <script>
         $('.delete').on('click',function(){
             var value = $(this).val();
-            var url = "ContentDelete.php?id="+value;
+            var url = "StuffDelete.php?id="+value;
             $('#DeleteModal').modal('show');
             $('#deletemain').attr('href',url);
         });

@@ -33,24 +33,12 @@ class ContentController extends Controller
      * @return array|boolean
      * @desc Creates, and returns a user by calling the create method on the BatchModel...\
      **/
-    public function createContent($data, $file)
+    public function createContent($data)
     {
-       if($file['image'] != ""){
-         $fileName = new uploads();
-        $fileName->startupload($file);
-        $fileName->uploadfile();
-        $image  =  $fileName->dbupload;
-       }
-       else{
-        $image = "";
-       }
-
       
         $Payload = array(
-            'title' => $data['title'],
             'Shortdescription' => $data['Shortdescription'],
             'description' => $data['description'],
-            'image' => $image,
             'status' => $data['status'],
             
         );
@@ -77,35 +65,13 @@ class ContentController extends Controller
         return $this->Model->editContent($id);
     }
 
-    public function ContentUpdate(array $data, $file)
+    public function ContentUpdate(array $data)
     {
-        if($file['image']['name'] != "" && $file['image']['size'] > 5000000 ){
-            echo "<script>alert('".$file['image']['size']."');</script>";
-            // header("Location:ContentEdit.php?id=".$data['id']);
-        }
-        else{
-
-        if ($file['image']['name'] == "") {
-            $image = $data['oldImage'];
-        } 
-        else {
-            if ($data['oldImage'] != "") {
-            unlink($_SERVER['DOCUMENT_ROOT'] . "/project-2/" . $data['oldImage']);
-            $fileName = new uploads();
-            $fileName->startupload($file);
-            $fileName->uploadfile();
-            $image  =  $fileName->dbupload;
-            }
-            
-        }
-
        
         $Payload = array(
             'id' => $data['id'],
-            'title' => $data['title'],
             'Shortdescription' => $data['Shortdescription'],
             'description' => $data['description'],
-            'image' => $image,
             'status' => $data['status'],
         );
         $Response = $this->Model->UpdateContent($Payload);
@@ -119,7 +85,7 @@ class ContentController extends Controller
             header("location: ContentIndex.php");
             return $Response;
         }
-    }
+    
     }
 
 
@@ -130,10 +96,6 @@ class ContentController extends Controller
      **/
     public function ContentDelete($id)
     {
-        $image = $this->Model->deleteContentImage($id);
-        if($image['image'] != false){
-            unlink($_SERVER['DOCUMENT_ROOT']."/project-2/".$image['image']);
-        }
 
         $response = $this->Model->deleteContent($id);
         if(!$response){

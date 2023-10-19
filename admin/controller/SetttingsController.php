@@ -58,6 +58,19 @@ class Settings extends Controller
             $fileName->uploadfile();
             $FaviconIcon  =  $fileName->dbupload;
         }
+        if ($file['ContentImage']['name'] == "") {
+            $ContentImage = $data['oldContentImage'];
+        } 
+        else {
+            if ($data['oldContentImage'] != "") {
+                unlink($_SERVER['DOCUMENT_ROOT'] . "/project-2/" . $data['oldContentImage']);
+            }
+            $files = $file['ContentImage'];
+            $fileName = new uploads();
+            $fileName->startupload($files);
+            $fileName->uploadfile();
+            $ContentImage  =  $fileName->dbupload;
+        }
         
       
 
@@ -82,6 +95,9 @@ class Settings extends Controller
            'openingHours' => $data['openingHours'],
            'FaviconIcon' => $FaviconIcon,
            'payment' => $data['payment'],
+           'ContentTitle' => $data['ContentTitle'],
+           'ContentImage' => $ContentImage,
+           'FreelanchingTitle' => $data['FreelanchingTitle'],
            
 
 

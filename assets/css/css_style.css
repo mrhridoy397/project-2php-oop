@@ -508,7 +508,7 @@ img {
 
 .container .welcome-section {
   padding: 50px 25px;
-  background-image: url("../img/bg.png") !important;
+  /* background-image: url("../img/bg.png") !important; */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -633,7 +633,7 @@ img {
 
 .container .course-details-section {
   padding: 50px 25px;
-  background-image: url("../img/bg.png") !important;
+  /* background-image: url("../img/bg.png") !important; */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1068,7 +1068,7 @@ img {
 
 .container .course-category {
   padding: 30px 50px;
-  background-image: linear-gradient(rgba(220, 20, 60, 0.05), rgba(220, 20, 60, 0.05)), url("../img/bg.png") !important;
+  /* background-image: linear-gradient(rgba(220, 20, 60, 0.05), rgba(220, 20, 60, 0.05)), url("../img/bg.png") !important; */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1199,8 +1199,7 @@ img {
 }
 
 .container .success-section {
-  background-image: linear-gradient(rgba(220, 20, 60, 0.05), rgba(220, 20, 60, 0.05)), url("../img/bg.png");
-  ;
+  /* background-image: linear-gradient(rgba(220, 20, 60, 0.05), rgba(220, 20, 60, 0.05)), url("../img/bg.png"); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1386,8 +1385,7 @@ img {
 }
 
 .container .counter-section {
-  background-image: linear-gradient(rgba(220, 20, 60, 0.05), rgba(220, 20, 60, 0.05)), url("../img/bg.png") !important;
-  ;
+  /* background-image: linear-gradient(rgba(220, 20, 60, 0.05), rgba(220, 20, 60, 0.05)), url("../img/bg.png") !important; */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1466,13 +1464,12 @@ img {
   padding: 20px 0;
 }
 
-.container .contact-content-form {
-  background: url("../img/bg.png");
+/* .container .contact-content-form {
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
   z-index: 2;
-}
+} */
 
 .container .contact-content-form .title-row {
   display: grid;
@@ -1716,7 +1713,7 @@ img {
 }
 
 .container .certified-section {
-  background: url("../img/bg.png");
+  /* background: url("../img/bg.png"); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1752,7 +1749,7 @@ img {
 }
 
 .container .gallery-section {
-  background-image: url("../img/bg.png");
+  /* background-image: url("../img/bg.png"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1798,7 +1795,7 @@ img {
 }
 
 .container .freelancing-section {
-  background-image: url("../img/bg.png");
+  /* background-image: url("../img/bg.png"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -2004,7 +2001,7 @@ img {
 }
 
 .container .facility-job-section {
-  background-image: url("../img/bg.png");
+  /* background-image: url("../img/bg.png"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -2062,7 +2059,7 @@ img {
 }
 
 .container .admission-main {
-  background-image: url("../img/bg.png");
+  /* background-image: url("../img/bg.png"); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2193,7 +2190,7 @@ img {
 }
 
 .container .seminar-main {
-  background-image: url("../img/bg.png");
+  /* background-image: url("../img/bg.png"); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2338,7 +2335,7 @@ img {
 
 @media (max-width: 1200px) {
   .freelancing-section {
-    background-image: url("../img/bg.png");
+    /* background-image: url("../img/bg.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -2402,7 +2399,7 @@ img {
   }
 
   .gallery-section {
-    background-image: url("../img/bg.png");
+    /* background-image: url("../img/bg.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -2448,7 +2445,7 @@ img {
   }
 
   .success-section {
-    background-image: linear-gradient(rgba(220, 20, 60, 0.05), rgba(220, 20, 60, 0.05)), url("../img/bg.png");
+    /* background-image: linear-gradient(rgba(220, 20, 60, 0.05), rgba(220, 20, 60, 0.05)), url("../img/bg.png"); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -2510,7 +2507,7 @@ img {
 
   .welcome-section {
     padding: 50px 25px;
-    background-image: url("../img/bg.png");
+    /* background-image: url("../img/bg.png"); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -2755,7 +2752,7 @@ img {
   }
 
   .facility-job-section {
-    background-image: url("../img/bg.png");
+    /* background-image: url("../img/bg.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -2801,7 +2798,7 @@ img {
 
   .course-details-section {
     padding: 50px 25px;
-    background-image: url("../img/bg.png");
+    /* background-image: url("../img/bg.png"); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -2936,7 +2933,7 @@ img {
 
 @media (max-width: 991px) {
   .success-section {
-    background-image: linear-gradient(rgba(220, 20, 60, 0.05), rgba(220, 20, 60, 0.05)), url("../img/bg.png");
+    /* background-image: linear-gradient(rgba(220, 20, 60, 0.05), rgba(220, 20, 60, 0.05)), url("../img/bg.png"); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -2998,7 +2995,7 @@ img {
 
   .welcome-section {
     padding: 50px 25px;
-    background-image: url("../img/bg.png");
+    /* background-image: url("../img/bg.png"); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -3123,7 +3120,7 @@ img {
 
   .course-details-section {
     padding: 50px 25px;
-    background-image: url("../img/bg.png");
+    /* background-image: url("../img/bg.png"); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -3256,7 +3253,7 @@ img {
   }
 
   .admission-main {
-    background-image: url("../img/bg.png");
+    /* background-image: url("../img/bg.png"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -3387,7 +3384,7 @@ img {
   }
 
   .seminar-main {
-    background-image: url("../img/bg.png");
+    /* background-image: url("../img/bg.png"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -3690,7 +3687,7 @@ img {
   }
 
   .gallery-section {
-    background-image: url("../img/bg.png");
+    /* background-image: url("../img/bg.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -3736,7 +3733,7 @@ img {
   }
 
   .freelancing-section {
-    background-image: url("../img/bg.png");
+    /* background-image: url("../img/bg.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -3922,7 +3919,7 @@ img {
   }
 
   .facility-job-section {
-    background-image: url("../images/bg.png");
+    /* background-image: url("../images/bg.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -4090,7 +4087,7 @@ img {
 
 @media (max-width: 600px) {
   .success-section {
-    background-image: linear-gradient(rgba(220, 20, 60, 0.05), rgba(220, 20, 60, 0.05)), url("../images/bg.png");
+    /* background-image: linear-gradient(rgba(220, 20, 60, 0.05), rgba(220, 20, 60, 0.05)), url("../images/bg.png"); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -4152,7 +4149,7 @@ img {
 
   .welcome-section {
     padding: 50px 25px;
-    background-image: url("../images/bg.png");
+    /* background-image: url("../images/bg.png"); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -4284,7 +4281,7 @@ img {
 
   .course-details-section {
     padding: 50px 25px;
-    background-image: url("../images/bg.png");
+    /* background-image: url("../images/bg.png"); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -4732,7 +4729,7 @@ img {
   }
 
   .gallery-section {
-    background-image: url("../images/bg.png");
+    /* background-image: url("../images/bg.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -4778,7 +4775,7 @@ img {
   }
 
   .freelancing-section {
-    background-image: url("../images/bg.png");
+    /* background-image: url("../images/bg.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -4926,7 +4923,7 @@ img {
   }
 
   .facility-job-section {
-    background-image: url("../images/bg.png");
+    /* background-image: url("../images/bg.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

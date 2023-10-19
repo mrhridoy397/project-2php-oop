@@ -77,7 +77,7 @@ require_once('./partials/header.php')
     <div class="free-part-section">
         <div class="title-row">
             <div class="col">
-                <h2>ফ্রিল্যান্সিং যাদের জন্য</h2>
+                <h2><?php echo $settings[22]['description']; ?></h2>
             </div>
         </div>
         <div class="free-part-row">
