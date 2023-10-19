@@ -70,29 +70,6 @@ class CMSController extends Controller
         return $this->Model->indexSuccessStudent();
     }
 
-    //    graphicsCourse in graphicsMultimedia page
-    public function getgraphicsCourse()
-    {
-        return $this->Model->indexgraphicsCourse();
-    }
-
-    //    webSoftwareCourse in webSoftware page
-    public function getwebSoftware()
-    {
-        return $this->Model->indexwebSoftware();
-    }
-
-    //    digitalmarketingCourse in digitalmarketing page
-    public function getdigitalMarketing()
-    {
-        return $this->Model->indexdigitalMarketing();
-    }
-
-    //    basicTradeCourse in basicTrade page
-    public function getbasicTrade()
-    {
-        return $this->Model->indexbasicTrade();
-    }
 
     //gallary in photoGallary page
     public function getgallary()
@@ -180,5 +157,10 @@ class CMSController extends Controller
             return $this->Model->marketPlaceImage();
         }
 
+        // Teacher in Teacher page
+        public function OuerTeacher()
+        {
+            return $this->Model->teacher();
+        }
 
 }

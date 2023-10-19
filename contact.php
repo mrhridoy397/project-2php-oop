@@ -142,7 +142,7 @@ require_once('./partials/header.php')
 
     <!-- map section start -->
     <div class="contact-page-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.8527949179897!2d91.09686537594216!3d22.659276429786615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3754ada0336c820b%3A0xf0dc344e5222f6c5!2zQ2FudmFzIElDVCBJbnN0aXR1dGUg4KaV4KeN4Kav4Ka-4Kao4Kat4Ka-4Ka4IOCmhuCmh-CmuOCmv-Cmn-CmvyDgpofgpqjgprjgp43gpp_gpr_gpp_gpr_gpongpp8!5e0!3m2!1sen!2sbd!4v1682856690121!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="<?php echo $settings[16]['description']; ?>"></iframe>
 
     </div>
 

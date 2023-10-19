@@ -129,69 +129,9 @@ class CMSModel extends Db
         return array();
     }
 
-    //    graphicsCourse in graphicsMultimedia page
-    public function indexgraphicsCourse()
-    {
-        $this->query("SELECT * FROM `graphicscourse` where `status` = 1");
-        $this->execute();
 
-        $graphicsCourse = $this->fetchAll();
-        if (!empty($graphicsCourse)) {
-            $Response = array(
-                $graphicsCourse
-            );
-            return $Response;
-        }
-        return array();
-    }
 
-    //    webSoftwareCourse in webSoftware page
-    public function indexwebSoftware()
-    {
-        $this->query("SELECT * FROM `websoftware` where `status` = 1");
-        $this->execute();
-
-        $webSoftware = $this->fetchAll();
-        if (!empty($webSoftware)) {
-            $Response = array(
-                $webSoftware
-            );
-            return $Response;
-        }
-        return array();
-    }
-
-    //    digitalmarketingCourse in digitalmarketing page
-    public function indexdigitalMarketing()
-    {
-        $this->query("SELECT * FROM `digitalmarketing` where `status` = 1");
-        $this->execute();
-
-        $digitalmarketing = $this->fetchAll();
-        if (!empty($digitalmarketing)) {
-            $Response = array(
-                $digitalmarketing
-            );
-            return $Response;
-        }
-        return array();
-    }
-
-    //    basicTradeCourse in basicTrade page
-    public function indexbasicTrade()
-    {
-        $this->query("SELECT * FROM `basictrade` where `status` = 1");
-        $this->execute();
-
-        $basicTrade = $this->fetchAll();
-        if (!empty($basicTrade)) {
-            $Response = array(
-                $basicTrade
-            );
-            return $Response;
-        }
-        return array();
-    }
+  
 
     //    gallary in photoGallary page
     public function indexgallary()
@@ -277,14 +217,6 @@ class CMSModel extends Db
         if (!empty($course)) {
             return $course;
         }
-        $this->query("SELECT * FROM `websoftware` WHERE `status` = 1");
-        $this->execute();
-        $this->query("SELECT * FROM `basictrade` WHERE `status` = 1");
-        $this->execute();
-        $this->query("SELECT * FROM `digitalmarketing` WHERE `status` = 1");
-        $this->execute();
-        $this->query("SELECT * FROM `graphicscourse` WHERE `status` = 1");
-        $this->execute();
     }
 
     // selectCourse OnlinAdmission Page
@@ -297,18 +229,6 @@ class CMSModel extends Db
         if (!empty($course)) {
             return $course;
         }
-        $this->query("SELECT * FROM `websoftware` WHERE `id` = :id");
-        $this->bind('id', $id);
-        $this->execute();
-        $this->query("SELECT * FROM `basictrade` WHERE `id` = :id");
-        $this->bind('id', $id);
-        $this->execute();
-        $this->query("SELECT * FROM `digitalmarketing` WHERE `id` = :id");
-        $this->bind('id', $id);
-        $this->execute();
-        $this->query("SELECT * FROM `graphicscourse` WHERE `id` = :id");
-        $this->bind('id', $id);
-        $this->execute();
        
     }
 
@@ -391,6 +311,22 @@ class CMSModel extends Db
           if (!empty($about)) {
               $Response = array(
                   $about
+              );
+              return $Response;
+          }
+          return array();
+      }
+
+      //    Teacher in Teacher page
+      public function teacher()
+      {
+          $this->query("SELECT * FROM `stuff` where `status` = 1");
+          $this->execute();
+  
+          $stuff = $this->fetchAll();
+          if (!empty($stuff)) {
+              $Response = array(
+                  $stuff
               );
               return $Response;
           }

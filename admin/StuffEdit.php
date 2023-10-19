@@ -403,8 +403,6 @@ if (isset($_REQUEST['submit']) && count($_REQUEST) > 1) $Response = $stuff->Upda
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
         <!-- /.container-fluid -->
 
     </div>

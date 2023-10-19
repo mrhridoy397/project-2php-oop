@@ -84,18 +84,14 @@
                                 <a href="#" class="" data-toggle="sub-menu">About us<i class="expand "></i></a>
                                 <ul class="sub-menu">
                                     <li class="menu-item"><a class="" href="about.php">About the organization</a></li>
-                                    <li class="menu-item"><a target="_blank" href="">About the CEO</a></li>
+                                    <li class="menu-item"><a target="_blank" href="teacher.php">About the Teacher</a></li>
 
                                 </ul>
                             </li>
                             <li class="menu-item menu-item-child">
                                 <a href="#" class="" data-toggle="sub-menu">Course Category<i class="expand "></i></a>
                                 <ul class="sub-menu">
-                                    <li class="menu-item"><a class="" href="graphicsMultimedia.php">Graphics Design and Multimedia</a></li>
-                                    <li class="menu-item"><a class="" href="webSoftware.php">Web & Software</a></li>
-                                    <li class="menu-item"><a class="" href="digitalMarketing.php">Digital Marketing</a></li>
-                                    <li class="menu-item"><a class="" href="basicTrade.php">Basic trade and fundamentals</a></li>
-
+                                    <li class="menu-item"><a class="" href="course.php">Our Popular Courses</a></li>
                                 </ul>
                             </li>
 

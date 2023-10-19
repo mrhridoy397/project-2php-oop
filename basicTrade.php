@@ -5,7 +5,6 @@ $courses = new CMSController();
 $settings = $courses->getSetting();
 $payment = $courses->getPayment();
 $CourseSelect = $courses->getCourseSelect();
-$basicTrade = $courses->getbasicTrade();
 ?>
 
 
@@ -17,50 +16,7 @@ require_once('./partials/header.php')
 
 <div class="container">
 
-    <div class="popular-course-section">
-        <?php 
-            foreach ($basicTrade[0] as  $value) {
-                
-        ?>
-        <div class="title-row">
-            <div class="title col">
-                <h2><?php echo  $value['title']; ?></h2>
-            </div>
-            <div class="title-text col">
-                <p><?php echo  $value['description']; ?></p>
-            </div>
-        </div>
-        <?php }?>
-        <div class="course-row">
-        <?php 
-            foreach ($basicTrade[0] as  $value) {
-                
-        ?>
-            <div class="course-col">
-                <a href="OnlinAdmission.php?id=<?php echo $value['id']; ?>">
-                    <div class="course-image">
-                        <img src="<?php echo  $value['image']; ?>" alt="">
-                    </div>
-                    <div class="course-text">
-                        <h3><?php echo  $value['courseName']; ?></h3>
-                        <!-- <span>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-half" aria-hidden="true"></i>
-                            ১০০০০ রিভিউস
-                        </span> -->
-                        <h4>CourseFee: <?php echo  $value['courseFee']; ?></h4>
 
-                    </div>
-
-                </a>
-            </div>
-            <?php }?>
-
-        </div>
-    </div>
 
      <!-- courseCategory start -->
      <div class="course-category">

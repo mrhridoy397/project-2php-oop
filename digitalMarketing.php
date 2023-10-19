@@ -5,7 +5,6 @@ $courses = new CMSController();
 $settings = $courses->getSetting();
 $payment = $courses->getPayment();
 $CourseSelect = $courses->getCourseSelect();
-$digitalMarketing = $courses->getdigitalMarketing();
 ?>
 
 
@@ -16,53 +15,6 @@ require_once('./partials/header.php')
 
 
 <div class="container">
-<!-- Course section start -->
-    <div class="popular-course-section">
-        <div class="title-row">
-            <?php 
-                foreach ($digitalMarketing[0] as  $data) {
-                    
-               
-            ?>
-            <div class="title col">
-                <h2><?php echo $data['title']; ?></h2>
-            </div>
-            <div class="title-text col">
-                <p><?php echo $data['description']; ?></p>
-            </div>
-            <?php }?>
-        </div>
-        <div class="course-row">
-        <?php 
-                foreach ($digitalMarketing[0] as  $data) {
-                    
-            ?>
-            <div class="course-col">
-                <a href="OnlinAdmission.php?id=<?php echo $data['id']; ?>">
-                    <div class="course-image">
-                        <img src="<?php echo $data['image']; ?>" alt="">
-                    </div>
-                    <div class="course-text">
-                        <h3><?php echo $data['courseName']; ?></h3>
-                        <!-- <span>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-half" aria-hidden="true"></i>
-                            ২০০০ রিভিউস
-                        </span> -->
-                        <h4>CourseFee: <?php echo $data['courseFee']; ?></h4>
-
-                    </div>
-
-                </a>
-            </div>
-            <?php }?>
-        </div>
-
-    </div>
-<!-- Course section end -->
 
 
    <!-- courseCategory start -->

@@ -188,65 +188,7 @@
          </div>
      </li>
 
-     <hr class="sidebar-divider my-0">
-     <!-- Nav Item - Pages Collapse Menu -->
-     <li class="nav-item">
-         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#graphicsCourse" aria-expanded="true" aria-controls="collapsePages">
-             <i class="fas fa-book-reader fa-sm text-white-50"></i>
-             <span>Graphics Course</span>
-         </a>
-         <div id="graphicsCourse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="graphicsCourseIndex.php">All Graphics Course</a>
-                 <a class="collapse-item" href="./graphicsCourseCreate.php">Create Graphics Course</a>
-             </div>
-         </div>
-     </li>
 
-     <hr class="sidebar-divider my-0">
-     <!-- Nav Item - Pages Collapse Menu -->
-     <li class="nav-item">
-         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#webSoftware" aria-expanded="true" aria-controls="collapsePages">
-             <i class="fas fa-book-reader fa-sm text-white-50"></i>
-             <span>Web Software Course</span>
-         </a>
-         <div id="webSoftware" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="webSoftwareIndex.php">All Web Course</a>
-                 <a class="collapse-item" href="./webSoftwareCreate.php">Create Web Course</a>
-             </div>
-         </div>
-     </li>
-     
-     <hr class="sidebar-divider my-0">
-     <!-- Nav Item - Pages Collapse Menu -->
-     <li class="nav-item">
-         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#digitalMarketing" aria-expanded="true" aria-controls="collapsePages">
-             <i class="fas fa-book-reader fa-sm text-white-50"></i>
-             <span>DigitalMarketing Course</span>
-         </a>
-         <div id="digitalMarketing" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="digitalMarketingIndex.php">All Marketing Course</a>
-                 <a class="collapse-item" href="./digitalMarketingCreate.php">Create Marketing Course</a>
-             </div>
-         </div>
-     </li>
-
-     <hr class="sidebar-divider my-0">
-     <!-- Nav Item - Pages Collapse Menu -->
-     <li class="nav-item">
-         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#basicTrade" aria-expanded="true" aria-controls="collapsePages">
-             <i class="fas fa-book-reader fa-sm text-white-50"></i>
-             <span>Basic Trade Course</span>
-         </a>
-         <div id="basicTrade" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="basicTradeIndex.php">All BasicTrade Course</a>
-                 <a class="collapse-item" href="./basicTradeCreate.php">Create BasicTrade Course</a>
-             </div>
-         </div>
-     </li>
      
      <hr class="sidebar-divider my-0">
      <!-- Nav Item - Pages Collapse Menu -->

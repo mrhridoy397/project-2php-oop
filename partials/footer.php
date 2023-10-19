@@ -12,9 +12,9 @@
         <div class="useful-links">
             <h3>Important links</h3>
             <ul>
-                <li><i class="fa fa-angle-right"></i><a href="">Home</a></li>
-                <li><i class="fa fa-angle-right"></i><a href="">About us</a></li>
-                <li><i class="fa fa-angle-right"></i><a href="">Contact</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="index.php">Home</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="about.php">About us</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="contact.php">Contact</a></li>
                 <li><i class="fa fa-angle-right"></i><a target="blank" href="">Student Login</a></li>
                 <li><i class="fa fa-angle-right"></i><a target="blank" href="">View the results</a></li>
             </ul>
@@ -22,7 +22,7 @@
         <div class="our-menu">
             <h3>Menu</h3>
             <ul>
-                <li><i class="fa fa-angle-right"></i><a href="">Web-design</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="webdesign.php">Web-design</a></li>
                 <li><i class="fa fa-angle-right"></i><a href="">Web-Development</a></li>
                 <li><i class="fa fa-angle-right"></i><a href="">Graphics Design</a></li>
                 <li><i class="fa fa-angle-right"></i><a href="">Digital Marketing</a></li>
