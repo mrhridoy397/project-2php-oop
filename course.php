@@ -43,14 +43,14 @@ require_once('./partials/header.php')
                             </div>
                             <div class="course-text">
                                 <h3><?php echo $data['courseName']; ?></h3>
-                                <!-- <span>
+                                <span>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
-                                2000 reviews
-                            </span> -->
+                                <?php echo $data['courseReviews']; ?>
+                            </span>
                                 <h4>Course fee <?php echo $data['coursefee']; ?></h4>
                             </div>
 
