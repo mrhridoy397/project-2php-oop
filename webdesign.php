@@ -4,7 +4,6 @@ $courses = new CMSController();
 
 $settings = $courses->getSetting();
 $payment = $courses->getPayment();
-$CourseSelect = $courses->getCourseSelect();
 ?>
 
 
@@ -105,31 +104,6 @@ require_once('./partials/header.php')
         </div>
     </div>
 
-
-    <!-- courseCategory start -->
-    <div class="course-category">
-
-        <div class="category-row">
-            <?php
-            if (!empty($CourseSelect)) {
-                foreach ($CourseSelect[0] as  $value) {
-
-
-            ?>
-                    <div class="col">
-                        <a href="<?php echo $value['buttonLink']; ?>">
-                            <div class="course-icon"><img src="<?php echo $value['image']; ?>" alt=""></div>
-                            <div class="course-cate-text">
-                                <h3><?php echo $value['courseName']; ?></h3>
-                            </div>
-                        </a>
-                    </div>
-            <?php }
-            } ?>
-        </div>
-
-    </div>
-    <!-- courseCategory end -->
 
 
     <!-- payment section start -->

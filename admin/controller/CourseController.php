@@ -54,6 +54,7 @@ class Course extends Controller
         $coursefee = stripcslashes(strip_tags($data['coursefee']));
         $Discount = stripcslashes(strip_tags($data['Discount']));
         $classSize = stripcslashes(strip_tags($data['classSize']));
+        $courseReviews = stripcslashes(strip_tags($data['courseReviews']));
         $courseAbout = stripcslashes(strip_tags($data['courseAbout']));
         $courseDetails = stripcslashes(strip_tags($data['courseDetails']));
         $isFeatured = stripcslashes(strip_tags($data['isFeatured']));
@@ -67,6 +68,7 @@ class Course extends Controller
             'coursefee' => $coursefee,
             'Discount' => $Discount,
             'classSize' => $classSize,
+            'courseReviews' => $courseReviews,
             'courseAbout' => $courseAbout,
             'courseDetails' => $courseDetails,
             'isFeatured' => $isFeatured,
@@ -118,6 +120,7 @@ class Course extends Controller
         $coursefee = stripcslashes(strip_tags($data['coursefee']));
         $Discount = stripcslashes(strip_tags($data['Discount']));
         $classSize = stripcslashes(strip_tags($data['classSize']));
+        $courseReviews = stripcslashes(strip_tags($data['courseReviews']));
         $courseAbout = stripcslashes(strip_tags($data['courseAbout']));
         $courseDetails = stripcslashes(strip_tags($data['courseDetails']));
         $isFeatured = stripcslashes(strip_tags($data['isFeatured']));
@@ -131,6 +134,7 @@ class Course extends Controller
             'coursefee' => $coursefee,
             'Discount' => $Discount,
             'classSize' => $classSize,
+            'courseReviews' => $courseReviews,
             'courseAbout' => $courseAbout,
             'courseDetails' => $courseDetails,
             'isFeatured' => $isFeatured,

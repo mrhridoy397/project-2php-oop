@@ -24,7 +24,7 @@ require_once('./partials/header.php')
     <div class="popular-course-section" >
         <div class="title-row">
             <div class="title col">
-                <h2>Our Teacher</h2>
+                <h2><?php echo $settings[23]['description']; ?></h2>
             </div>
         </div>
         <div class="course-row">

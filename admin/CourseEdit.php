@@ -115,6 +115,10 @@ if (isset($_REQUEST['submit']) && count($_REQUEST) > 1) $Response = $course->Upd
                                             <input  type="text" name="classSize" id="classSize" class="form-control" placeholder=" classSize" value="<?php if(isset($_REQUEST['classSize']))  { echo $__REQUEST['classSize'];} else{echo $data['classSize'];} ?>">
                                         </div>
                                         <div class="form-group">
+                                        <label for="courseReviews"> Course Reviews </label>
+                                            <input  type="text" name="courseReviews" id="courseReviews" class="form-control" placeholder=" Course Reviews" value="<?php if(isset($_REQUEST['courseReviews']))  { echo $__REQUEST['courseReviews'];} else{echo $data['courseReviews'];} ?>">
+                                        </div>
+                                        <div class="form-group">
                                         <label for="courseAbout"> About of Course</label>
                                           <textarea class="form-control" name="courseAbout" id="courseAbout" Rows="10" class="form-control"><?php if(isset($_REQUEST['courseAbout']))  { echo $__REQUEST['courseAbout'];} else{echo $data['courseAbout'];} ?></textarea>
                                         </div>

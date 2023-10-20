@@ -156,21 +156,6 @@
          </div>
      </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-     <!-- Nav Item - Pages Collapse Menu -->
-     <li class="nav-item">
-         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#CourseSelect" aria-expanded="true" aria-controls="collapsePages">
-         <i class="fas fa-address-book"></i>
-             <span>Course Select</span>
-         </a>
-         <div id="CourseSelect" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="CourseSelectIndex.php">All Course Select</a>
-                 <a class="collapse-item" href="./CourseSelectCreate.php">Create Course Select</a>
-             </div>
-         </div>
-     </li>
 
        <!-- Divider -->
        <hr class="sidebar-divider my-0">

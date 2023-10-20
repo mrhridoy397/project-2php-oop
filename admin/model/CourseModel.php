@@ -47,14 +47,15 @@ class CourseModel extends Db
     public function createCourse(array $data): array
     {
         
-        $this->query("INSERT INTO `courses`( `batchId`, `courseName`, `courseDuration`, `coursefee`, `Discount`, `classSize`, `courseAbout`, `courseDetails`, `isFeatured`, `status`, `image`) 
-        VALUES (:batchId,:courseName,:courseDuration,:coursefee,:Discount,:classSize,:courseAbout,:courseDetails,:isFeatured,:status,:image)");
+        $this->query("INSERT INTO `courses`( `batchId`, `courseName`, `courseDuration`, `coursefee`, `Discount`, `classSize`,`courseReviews`, `courseAbout`, `courseDetails`, `isFeatured`, `status`, `image`) 
+        VALUES (:batchId,:courseName,:courseDuration,:coursefee,:Discount,:classSize,:courseReviews,:courseAbout,:courseDetails,:isFeatured,:status,:image)");
         $this->bind('batchId', $data['batchId']);
         $this->bind('courseName', $data['courseName']);
         $this->bind('courseDuration', $data['courseDuration']);
         $this->bind('coursefee', $data['coursefee']);
         $this->bind('Discount', $data['Discount']);
         $this->bind('classSize', $data['classSize']);
+        $this->bind('courseReviews', $data['courseReviews']);
         $this->bind('courseAbout', $data['courseAbout']);
         $this->bind('courseDetails', $data['courseDetails']);
         $this->bind('isFeatured', $data['isFeatured']);
@@ -107,13 +108,14 @@ class CourseModel extends Db
     public function Update(array $data): array
     {
        
-        $this->query("UPDATE `courses` SET `batchId`=:batchId,`courseName`=:courseName,`courseDuration`=:courseDuration,`coursefee`=:coursefee,`Discount`=:Discount,`classSize`=:classSize,`courseAbout`=:courseAbout,`courseDetails`=:courseDetails,`isFeatured`=:isFeatured,`status`=:status,`image`=:image WHERE `id`=:id");
+        $this->query("UPDATE `courses` SET `batchId`=:batchId,`courseName`=:courseName,`courseDuration`=:courseDuration,`coursefee`=:coursefee,`Discount`=:Discount,`classSize`=:classSize,`courseReviews`=:courseReviews,`courseAbout`=:courseAbout,`courseDetails`=:courseDetails,`isFeatured`=:isFeatured,`status`=:status,`image`=:image WHERE `id`=:id");
         $this->bind('batchId', $data['batchId']);
         $this->bind('courseName', $data['courseName']);
         $this->bind('courseDuration', $data['courseDuration']);
         $this->bind('coursefee', $data['coursefee']);
         $this->bind('Discount', $data['Discount']);
         $this->bind('classSize', $data['classSize']);
+        $this->bind('courseReviews', $data['courseReviews']);
         $this->bind('courseAbout', $data['courseAbout']);
         $this->bind('courseDetails', $data['courseDetails']);
         $this->bind('isFeatured', $data['isFeatured']);

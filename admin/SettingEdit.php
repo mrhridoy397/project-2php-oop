@@ -148,6 +148,10 @@ if (isset($_REQUEST['submit']) && count($_REQUEST) > 0) $Response = $settings->U
                                                 <input type="text" id="<?php echo $data[22]['title']; ?>" class="form-control form-control-user" placeholder="<?php echo $data[22]['title']; ?>" name="<?php echo $data[22]['title']; ?>"  value="<?php echo $data[22]['description']; ?>">
                                             </div>
                                             <div class="form-group">
+                                                <label for="<?php echo $data[23]['title']; ?>" ><?php echo $data[23]['title']; ?></label>
+                                                <input type="text" id="<?php echo $data[23]['title']; ?>" class="form-control form-control-user" placeholder="<?php echo $data[23]['title']; ?>" name="<?php echo $data[23]['title']; ?>"  value="<?php echo $data[23]['description']; ?>">
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="" ><?php echo $data[1]['title']; ?></label>
                                                 <input type="hidden"  name="oldsideLogo"  value="<?php echo $data[1]['description']; ?>">
                                                 <input type="file" name="<?php echo $data[1]['title']; ?>" class="form-control">

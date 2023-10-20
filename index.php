@@ -95,7 +95,7 @@ require_once('./partials/header.php')
     <div class="popular-course-section" >
         <div class="title-row">
             <div class="title col">
-                <h2>Our Teacher</h2>
+                <h2><?php echo $settings[23]['description']; ?></h2>
             </div>
         </div>
         <div class="course-row">
@@ -153,7 +153,7 @@ require_once('./partials/header.php')
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
-                                2000 reviews
+                                <?php echo $data['courseReviews']; ?>
                             </span>
                                 <h4>Course fee <?php echo $data['coursefee']; ?></h4>
                             </div>
