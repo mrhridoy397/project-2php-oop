@@ -7,7 +7,6 @@ $allTeacher = $courses->OuerTeacher();
 $settings = $courses->getSetting();
 $success = $courses->getSuccess();
 $payment = $courses->getPayment();
-$CourseSelect = $courses->getCourseSelect();
 $SuccessStudent = $courses->getSuccessStudent();
 // var_dump($settings);
 
@@ -21,8 +20,8 @@ require_once('./partials/header.php')
 <!-- content part start -->
 <div class="container">
 
-    <!-- Course section start  -->
-    <div class="popular-course-section" id="popular_course">
+    <!-- Teacher section start  -->
+    <div class="popular-course-section" >
         <div class="title-row">
             <div class="title col">
                 <h2>Our Teacher</h2>
@@ -51,7 +50,7 @@ require_once('./partials/header.php')
 
     </div>
 
-    <!-- Course section end  -->
+    <!-- Teacher section end  -->
 
     <!-- counter section start -->
     <div class="counter-section">

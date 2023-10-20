@@ -6,10 +6,10 @@ $active = $courses->active;
 $index = $courses->getCourses();
 $data = $courses->getSlider();
 $indexContent = $courses->getContent();
+$allTeacher = $courses->OuerTeacher();
 $settings = $courses->getSetting();
 $success = $courses->getSuccess();
 $payment = $courses->getPayment();
-$CourseSelect = $courses->getCourseSelect();
 $SuccessStudent = $courses->getSuccessStudent();
 // var_dump($settings);
 
@@ -91,22 +91,28 @@ require_once('./partials/header.php')
         </div>
     </div>
 
-    <!-- courseCategory start -->
-    <div class="course-category">
-
-        <div class="category-row">
+    <!-- Teacher section start  -->
+    <div class="popular-course-section" >
+        <div class="title-row">
+            <div class="title col">
+                <h2>Our Teacher</h2>
+            </div>
+        </div>
+        <div class="course-row">
             <?php
-            if (!empty($CourseSelect)) {
-                foreach ($CourseSelect[0] as  $value) {
+            if (!empty($allTeacher)) {
+                foreach ($allTeacher[0] as  $data) {
 
 
             ?>
-                    <div class="col">
-                        <a href="<?php echo $value['buttonLink']; ?>">
-                            <div class="course-icon"><img src="<?php echo $value['image']; ?>" alt=""></div>
-                            <div class="course-cate-text">
-                                <h3><?php echo $value['courseName']; ?></h3>
-                            </div>
+                    <div class="course-col-10">
+                        <div class="course-image2">
+                            <img src="<?php echo $data['image']; ?>" alt="">
+                        </div>
+                        <div class="course-text">
+                            <h2><?php echo $data['name']; ?></h2>
+                        </div>
+
                         </a>
                     </div>
             <?php }
@@ -114,7 +120,8 @@ require_once('./partials/header.php')
         </div>
 
     </div>
-    <!-- courseCategory end -->
+
+    <!-- Teacher section end  -->
 
     <!-- Course section start  -->
     <div class="popular-course-section" id="popular_course">

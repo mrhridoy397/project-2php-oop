@@ -96,23 +96,6 @@ class CMSModel extends Db
         return array();
     }
 
-
-    //    CourseSelect in index page
-    public function indexCourseSelect()
-    {
-        $this->query("SELECT * FROM `courseselect` where `status` = 1");
-        $this->execute();
-
-        $courseselect = $this->fetchAll();
-        if (!empty($courseselect)) {
-            $Response = array(
-                $courseselect
-            );
-            return $Response;
-        }
-        return array();
-    }
-
     //    Success Student in index page
     public function indexSuccessStudent()
     {

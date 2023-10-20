@@ -57,13 +57,6 @@ class CMSController extends Controller
         return $this->Model->indexPayment();
     }
 
-    // CourseSelect in index page
-    public function getCourseSelect()
-    {
-        return $this->Model->indexCourseSelect();
-    }
-
-
     //    Success Student in index page
     public function getSuccessStudent()
     {

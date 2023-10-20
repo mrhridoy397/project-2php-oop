@@ -5,8 +5,8 @@ $courses = new CMSController();
 $settings = $courses->getSetting();
 $success = $courses->getSuccess();
 $payment = $courses->getPayment();
-$CourseSelect = $courses->getCourseSelect();
 $courseAll = $courses->Course();
+$SuccessStudent = $courses->getSuccessStudent();
 // var_dump($success);
 ?>
 
@@ -19,31 +19,31 @@ require_once('./partials/header.php')
 
 
 <div class="container">
- <!-- Course section start  -->
- <div class="popular-course-section" id="popular_course">
-            <div class="title-row">
-                <div class="title col">
-                    <h2><?php echo $settings[8]['description']; ?></h2>
-                </div>
-                <div class="title-text col">
-                    <p><?php echo $settings[9]['description']; ?></p>
-                </div>
+    <!-- Course section start  -->
+    <div class="popular-course-section" id="popular_course">
+        <div class="title-row">
+            <div class="title col">
+                <h2><?php echo $settings[8]['description']; ?></h2>
             </div>
-            <div class="course-row">
-                <?php
-                if(!empty($courseAll)){
+            <div class="title-text col">
+                <p><?php echo $settings[9]['description']; ?></p>
+            </div>
+        </div>
+        <div class="course-row">
+            <?php
+            if (!empty($courseAll)) {
                 foreach ($courseAll[0] as  $data) {
-                    
-                
-                ?>
-                <div class="course-col">
-                    <a href="OnlinAdmission.php?id=<?php echo $data['id']; ?>">
-                        <div class="course-image">
-                            <img src="<?php echo $data['image']; ?>" alt="">
-                        </div>
-                        <div class="course-text">
-                            <h3><?php echo $data['courseName'];?></h3>
-                            <!-- <span>
+
+
+            ?>
+                    <div class="course-col">
+                        <a href="OnlinAdmission.php?id=<?php echo $data['id']; ?>">
+                            <div class="course-image">
+                                <img src="<?php echo $data['image']; ?>" alt="">
+                            </div>
+                            <div class="course-text">
+                                <h3><?php echo $data['courseName']; ?></h3>
+                                <!-- <span>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -51,43 +51,37 @@ require_once('./partials/header.php')
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 2000 reviews
                             </span> -->
-                            <h4>Course fee <?php echo $data['coursefee'];?></h4>
-                        </div>
+                                <h4>Course fee <?php echo $data['coursefee']; ?></h4>
+                            </div>
 
-                    </a>
-                </div>
-                <?php }}?>
-            </div>
-
+                        </a>
+                    </div>
+            <?php }
+            } ?>
         </div>
 
-        <!-- Course section end  -->
+    </div>
 
+    <!-- Course section end  -->
 
+    <!-- counter section start -->
+    <div class="counter-section">
 
-  <!-- courseCategory start -->
-  <div class="course-category">
-           
-           <div class="category-row">
-           <?php 
-           if(!empty($CourseSelect)){
-           foreach ($CourseSelect[0] as  $value) {
-               
-           
-           ?>
-               <div class="col">
-                   <a href="<?php echo $value['buttonLink']; ?>">
-                       <div class="course-icon"><img src="<?php echo $value['image']; ?>" alt=""></div>
-                       <div class="course-cate-text">
-                           <h3><?php echo $value['courseName']; ?></h3>
-                       </div>
-                   </a>
-               </div>
-               <?php }}?>
-           </div>
-           
-       </div>
-       <!-- courseCategory end -->
+        <div class="counter-row">
+            <?php
+            if (!empty($SuccessStudent)) {
+                foreach ($SuccessStudent[0] as $data) {
+            ?>
+                    <div class="col">
+                        <h4><?php echo $data['student']; ?>+</h4>
+                        <p><?php echo $data['title']; ?></p>
+                    </div>
+            <?php  }
+            } ?>
+        </div>
+
+    </div>
+    <!-- counter section end -->
 
 
     <!-- payment section start -->

@@ -4,7 +4,7 @@ $courses = new CMSController();
 
 $settings = $courses->getSetting();
 $payment = $courses->getPayment();
-$CourseSelect = $courses->getCourseSelect();
+$SuccessStudent = $courses->getSuccessStudent();
 $gallary = $courses->getgallary();
 ?>
 
@@ -13,66 +13,64 @@ $gallary = $courses->getgallary();
 
 <?php
 require_once('./partials/header.php')
-    ?>
+?>
 
 
 <div class="container">
+    <!-- photo gallary Start -->
     <div class="gallery-section">
         <div class="gallery_titile-row">
-            <?php 
+            <?php
             if (!empty($gallary)) {
-            foreach ($gallary[0] as $value) {
+                foreach ($gallary[0] as $value) {
 
-                ?>
-                <h2>
-                    <?php echo $value['title'] ?>
-                </h2>
-            <?php } }?>
+            ?>
+                    <h2>
+                        <?php echo $value['title'] ?>
+                    </h2>
+            <?php }
+            } ?>
         </div>
         <div class="gallery-row">
-        
-            <?php 
-            if (!empty($gallary)) {
-            foreach ($gallary[0] as $value) {
 
-                ?>
-                <div class="col">
-                    <img src="<?php echo $value['image'] ?>" alt="">
-                    <h2>
-                        <?php echo $value['shortDescription'] ?>
-                    </h2>
-                </div>
-            <?php } }?>
+            <?php
+            if (!empty($gallary)) {
+                foreach ($gallary[0] as $value) {
+
+            ?>
+                    <div class="col">
+                        <img src="<?php echo $value['image'] ?>" alt="">
+                        <h2>
+                            <?php echo $value['shortDescription'] ?>
+                        </h2>
+                    </div>
+            <?php }
+            } ?>
         </div>
     </div>
+    <!-- photo gallary End -->
 
+    <!-- counter section start -->
+    <div class="counter-section">
 
-    <!-- courseCategory start -->
-    <div class="course-category">
-
-        <div class="category-row">
+        <div class="counter-row">
             <?php
-            if (!empty($CourseSelect)) {
-                foreach ($CourseSelect[0] as $value) {
-
-
-                    ?>
+            if (!empty($SuccessStudent)) {
+                foreach ($SuccessStudent[0] as $data) {
+            ?>
                     <div class="col">
-                        <a href="<?php echo $value['buttonLink']; ?>">
-                            <div class="course-icon"><img src="<?php echo $value['image']; ?>" alt=""></div>
-                            <div class="course-cate-text">
-                                <h3>
-                                    <?php echo $value['courseName']; ?>
-                                </h3>
-                            </div>
-                        </a>
+                        <h4><?php echo $data['student']; ?>+</h4>
+                        <p><?php echo $data['title']; ?></p>
                     </div>
-                <?php }
+            <?php  }
             } ?>
         </div>
 
     </div>
-    <!-- courseCategory end -->
+    <!-- counter section end -->
+
+
+
 
 
     <!-- payment section start -->
@@ -88,14 +86,14 @@ require_once('./partials/header.php')
             if (!empty($payment)) {
                 foreach ($payment[0] as $value) {
 
-                    ?>
+            ?>
                     <div class="col">
                         <img src="<?php echo $value['image']; ?>" alt="">
                         <a href="tel:<?php echo $value['paymentNumber']; ?>">
                             <?php echo $value['paymentNumber']; ?>
                         </a>
                     </div>
-                <?php }
+            <?php }
             } ?>
         </div>
 
@@ -107,4 +105,4 @@ require_once('./partials/header.php')
 
 <?php
 require_once('./partials/footer.php')
-    ?>
+?>
