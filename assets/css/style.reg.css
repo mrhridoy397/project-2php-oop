@@ -1,0 +1,29 @@
+#rg_title{
+    color: #e91e63;
+}
+span.input-group-text{
+    background:#E91E63;
+    color:white;
+    
+}
+
+.validation_active{
+
+    border:1px solid #e91e63 !important;
+}
+  
+.form-control{
+    width: 100%;
+}
+#login,#send,#code,#change_password{
+    border:none;
+    background:#E91E63;
+    color:#fff;
+    padding:8px 0;
+    outline: none;
+    font-size:18px;
+    margin-top:20px;
+}
+#login:hover,#send:hover,#change_password:hover{
+    background:#D41454 !important;
+}

@@ -105,8 +105,8 @@
                             </li>
                             <li class="menu-item"><a class="" href="freelanching.php">Freelancing</a></li>
                             <li class="menu-item"><a class="" href="contact.php">Contact</a></li>
-                            <li class="menu-item"><a class="" href="" target="_blank">Result</a></li>
-                            <li id="member-login" class="menu-item"><a target="_blank" href="">Login</a></li>
+                            <li class="menu-item"><a class="" href="result.php" target="_blank">Result</a></li>
+                            <li id="member-login" class="menu-item"><a target="_blank" href="login.php">Login</a></li>
                         </ul>
                     </nav>
                 </div>

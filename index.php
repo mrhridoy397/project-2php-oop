@@ -11,7 +11,6 @@ $settings = $courses->getSetting();
 $success = $courses->getSuccess();
 $payment = $courses->getPayment();
 $SuccessStudent = $courses->getSuccessStudent();
-// var_dump($settings);
 
 ?>
 
