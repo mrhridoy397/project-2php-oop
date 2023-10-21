@@ -40,6 +40,14 @@ require_once('./partials/header.php')
                         </div>
                         <div class="course-text">
                             <h2><?php echo $data['name']; ?></h2>
+                            <h3><?php echo $data['subject']; ?></h3>
+                            <div class="our-social">
+                                <a target="_blank" href="<?php echo $data ['link1']; ?>"><i class="fa fa-facebook"></i></a>
+                                <a target="_blank" href="<?php echo $data ['link2']; ?>"><i class="fa fa-instagram"></i></a>
+                                <a target="_blank" href="<?php echo $data ['link3']; ?>"><i class="fa fa-linkedin"></i></a>
+                                <a target="_blank" href="<?php echo $data ['link4']; ?>"><i class="fa fa-twitter"></i></a>
+                                <br>
+                            </div>
                         </div>
 
                         </a>

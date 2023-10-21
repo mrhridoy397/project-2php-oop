@@ -369,8 +369,23 @@ img {
   cursor: pointer;
   transition: all 0.3s;
 }
-
 .footer-main .footer-top .our-social a .fa {
+  color: #e91e63;
+  font-size: 18px;
+}
+ .our-social a {
+  display: inline-block;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.our-social a .fa {
   color: #e91e63;
   font-size: 18px;
 }

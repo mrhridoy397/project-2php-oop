@@ -55,11 +55,11 @@ require_once('./partials/header.php')
     </div>
     <div class="important-info">
         <div class="container-info">
-                    <div class="title-row">
-                        <div class="important-heading">
-                            <h2><?php echo $settings[20]['description']; ?></h2>
-                        </div>
-                    </div>
+            <div class="title-row">
+                <div class="important-heading">
+                    <h2><?php echo $settings[20]['description']; ?></h2>
+                </div>
+            </div>
             <div class="content-row">
                 <div class="important-img">
                     <div class="main-card">
@@ -83,7 +83,8 @@ require_once('./partials/header.php')
                                         </li>
                                     </ol>
                                 </div>
-                        <?php }} ?>
+                        <?php }
+                        } ?>
                     </div>
                 </div>
             </div>
@@ -92,7 +93,7 @@ require_once('./partials/header.php')
     </div>
 
     <!-- Teacher section start  -->
-    <div class="popular-course-section" >
+    <div class="popular-course-section">
         <div class="title-row">
             <div class="title col">
                 <h2><?php echo $settings[23]['description']; ?></h2>
@@ -111,6 +112,14 @@ require_once('./partials/header.php')
                         </div>
                         <div class="course-text">
                             <h2><?php echo $data['name']; ?></h2>
+                            <h3><?php echo $data['subject']; ?></h3>
+                            <div class="our-social">
+                                <a target="_blank" href="<?php echo $data ['link1']; ?>"><i class="fa fa-facebook"></i></a>
+                                <a target="_blank" href="<?php echo $data ['link2']; ?>"><i class="fa fa-instagram"></i></a>
+                                <a target="_blank" href="<?php echo $data ['link3']; ?>"><i class="fa fa-linkedin"></i></a>
+                                <a target="_blank" href="<?php echo $data ['link4']; ?>"><i class="fa fa-twitter"></i></a>
+                                <br>
+                            </div>
                         </div>
 
                         </a>
@@ -148,13 +157,13 @@ require_once('./partials/header.php')
                             <div class="course-text">
                                 <h3><?php echo $data['courseName']; ?></h3>
                                 <span>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <?php echo $data['courseReviews']; ?>
-                            </span>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <?php echo $data['courseReviews']; ?>
+                                </span>
                                 <h4>Course fee <?php echo $data['coursefee']; ?></h4>
                             </div>
 
