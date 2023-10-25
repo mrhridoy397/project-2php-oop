@@ -7,7 +7,7 @@ class CMSModel extends Db
     // index page courses
     public function indexCourses()
     {
-        $this->query("SELECT * FROM `courses` where `isFeatured` = 1 AND `status` = 1  ORDER BY `id` DESC LIMIT 4");
+        $this->query("SELECT * FROM `courses` where `isFeatured` = 1 AND `status` = 1  ORDER BY `id` DESC LIMIT 3");
         $this->execute();
 
         $courses = $this->fetchAll();
