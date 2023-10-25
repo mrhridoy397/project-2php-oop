@@ -2046,7 +2046,7 @@ img {
 }
 
 .container .facility-job-section .row .col {
-  background: rgba(220, 20, 60, 0.05);
+  /* background: rgba(220, 20, 60, 0.05); */
   position: relative;
   height: 100%;
   width: 100%;
@@ -2054,11 +2054,19 @@ img {
   border-radius: 30px;
 }
 
-.container .facility-job-section .row .col h2 {
+.container .facility-job-section .row .col h2  {
   color: #e91e63;
   font-size: 28px;
   padding: 20px 15px;
+  margin-left: 35%;
 }
+.container .facility-job-section .row .col h1{
+  color: #e91e63;
+  font-size: 28px;
+  padding: 10px 5px;
+  margin-left: 40%;
+}
+
 
 .container .facility-job-section .row .col .in-row {
   display: grid;

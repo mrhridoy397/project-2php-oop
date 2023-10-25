@@ -99,6 +99,9 @@ class Settings extends Controller
            'ContentImage' => $ContentImage,
            'FreelanchingTitle' => $data['FreelanchingTitle'],
            'TeacherTitle' => $data['TeacherTitle'],
+           'CourseAbout' => $data['CourseAbout'],
+           'CourseDetails' => $data['CourseDetails'],
+           'CourseTitle' => $data['CourseTitle'],
 
            
 

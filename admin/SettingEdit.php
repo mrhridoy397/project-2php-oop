@@ -152,6 +152,18 @@ if (isset($_REQUEST['submit']) && count($_REQUEST) > 0) $Response = $settings->U
                                                 <input type="text" id="<?php echo $data[23]['title']; ?>" class="form-control form-control-user" placeholder="<?php echo $data[23]['title']; ?>" name="<?php echo $data[23]['title']; ?>"  value="<?php echo $data[23]['description']; ?>">
                                             </div>
                                             <div class="form-group">
+                                                <label for="<?php echo $data[24]['title']; ?>" >CourseAboutTitle</label>
+                                                <input type="text" id="<?php echo $data[24]['title']; ?>" class="form-control form-control-user" placeholder="" name="<?php echo $data[24]['title']; ?>"  value="<?php echo $data[24]['description']; ?>">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="<?php echo $data[25]['title']; ?>" >CourseDetailsTitle</label>
+                                                <input type="text" id="<?php echo $data[25]['title']; ?>" class="form-control form-control-user" placeholder="" name="<?php echo $data[25]['title']; ?>"  value="<?php echo $data[25]['description']; ?>">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="<?php echo $data[26]['title']; ?>" ><?php echo $data[26]['title']; ?></label>
+                                                <input type="text" id="<?php echo $data[26]['title']; ?>" class="form-control form-control-user" placeholder="<?php echo $data[26]['title']; ?>" name="<?php echo $data[26]['title']; ?>"  value="<?php echo $data[26]['description']; ?>">
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="" ><?php echo $data[1]['title']; ?></label>
                                                 <input type="hidden"  name="oldsideLogo"  value="<?php echo $data[1]['description']; ?>">
                                                 <input type="file" name="<?php echo $data[1]['title']; ?>" class="form-control">

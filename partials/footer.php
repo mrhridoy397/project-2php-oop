@@ -22,7 +22,7 @@
         <div class="our-menu">
             <h3>Menu</h3>
             <ul>
-                <li><i class="fa fa-angle-right"></i><a href="webdesign.php">Web-design</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="OurCourseDetails.php">OurCourseDetails</a></li>
                 <li><i class="fa fa-angle-right"></i><a href="">Web-Development</a></li>
                 <li><i class="fa fa-angle-right"></i><a href="">Graphics Design</a></li>
                 <li><i class="fa fa-angle-right"></i><a href="">Digital Marketing</a></li>

@@ -4,9 +4,8 @@ $courses = new CMSController();
 
 $settings = $courses->getSetting();
 $payment = $courses->getPayment();
-$CourseSelect = $courses->getCourseSelect();
+$courseAll = $courses->Course();
 ?>
-
 
 
 
@@ -14,33 +13,36 @@ $CourseSelect = $courses->getCourseSelect();
 require_once('./partials/header.php')
 ?>
 
+
+
+
 <div class="container">
+    <div class="facility-job-section">
+        <div class="row">
+            <?php
+            foreach ($courseAll[0] as  $value) {
 
 
+            ?>
+                <div class="col when-faciliy">
+                    <h1><?php echo  $value['courseName']; ?></h1>
+                    <h2><?php echo $settings[26]['description']; ?></h2>
+                    <div class="in-row">
+                        <div class="in-col">
+                            <h3><?php echo $settings[24]['description']; ?></h3>
+                            <p><?php echo  $value['courseAbout']; ?></p>
+                        </div>
+                        <div class="in-col">
+                            <h3><?php echo $settings[25]['description']; ?></h3>
+                            <p><?php echo  $value['courseDetails']; ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
 
-     <!-- courseCategory start -->
-     <div class="course-category">
-           
-           <div class="category-row">
-           <?php 
-           if(!empty($CourseSelect)){
-           foreach ($CourseSelect[0] as  $value) {
-               
-           
-           ?>
-               <div class="col">
-                   <a href="<?php echo $value['buttonLink']; ?>">
-                       <div class="course-icon"><img src="<?php echo $value['image']; ?>" alt=""></div>
-                       <div class="course-cate-text">
-                           <h3><?php echo $value['courseName']; ?></h3>
-                       </div>
-                   </a>
-               </div>
-               <?php }}?>
-           </div>
-           
-       </div>
-       <!-- courseCategory end -->
+
 
     <!-- payment section start -->
     <div class="payment-section">
@@ -66,9 +68,6 @@ require_once('./partials/header.php')
     <!-- payment section end -->
 
 </div>
-
-
-
 
 
 <?php
